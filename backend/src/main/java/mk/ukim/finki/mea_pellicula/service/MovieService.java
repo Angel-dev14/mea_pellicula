@@ -1,4 +1,4 @@
-package mk.ukim.finki.mea_pellicula.Service;
+package mk.ukim.finki.mea_pellicula.service;
 
 import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
 import mk.ukim.finki.mea_pellicula.repo.MovieProjectionsViewRepository;

@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="implement show movie projections for next month frontend">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/list-next-month-projections/list-next-month-projections.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/list-next-month-projections/list-next-month-projections.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/list-next-month-projections/list-next-month-projections.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/movie-projection.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/movie-card/movie-card.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/movie-card/movie-card.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/movie-card/movie-card.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/movie.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/proxy.conf.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/Service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+    </list>
+    <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="">
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,23 +45,38 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula\frontend\node_modules\typescript\lib" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="" />
+      <changelist id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="" />
       <created>1686763607983</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686763607983</updated>
       <workItem from="1686763609263" duration="127000" />
       <workItem from="1686992699505" duration="961000" />
+      <workItem from="1687028830868" duration="283000" />
+      <workItem from="1687029390175" duration="290000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
