@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="show movie projections for next month - frontend" />
-    <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="">
+    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="show movie projections for next month - frontend">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/R__test.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/R__upcoming_projections.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
+    <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +46,7 @@
       <workItem from="1687028830868" duration="283000" />
       <workItem from="1687029390175" duration="290000" />
       <workItem from="1687029886387" duration="160000" />
+      <workItem from="1687095599276" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="show movie projections for next month - frontend">
       <created>1687029954589</created>
