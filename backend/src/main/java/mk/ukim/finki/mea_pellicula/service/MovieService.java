@@ -1,22 +1,29 @@
 package mk.ukim.finki.mea_pellicula.service;
 
 import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
-import mk.ukim.finki.mea_pellicula.repo.MovieProjectionsViewRepository;
+import mk.ukim.finki.mea_pellicula.model.UpcomingProjectionsView;
+import mk.ukim.finki.mea_pellicula.repo.MovieProjectionsRepository;
+import mk.ukim.finki.mea_pellicula.repo.UpcomingProjectionsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class MovieService {
-    private final MovieProjectionsViewRepository movieProjectionsRepository;
+    private final MovieProjectionsRepository movieProjectionsRepository;
+    private final UpcomingProjectionsRepository upcomingProjectionsRepository;
 
-
-    public MovieService(MovieProjectionsViewRepository movieProjectionsRepository) {
+    public MovieService(MovieProjectionsRepository movieProjectionsRepository,
+                        UpcomingProjectionsRepository upcomingProjectionsRepository) {
         this.movieProjectionsRepository = movieProjectionsRepository;
+        this.upcomingProjectionsRepository = upcomingProjectionsRepository;
     }
 
     public List<MovieProjectionsView> getAllMovieProjectionsForNextMonth() {
         return movieProjectionsRepository.findAll();
     }
 
+    public List<UpcomingProjectionsView> getInfoAboutUpcomingProjectionsOfMovie(Long movieId) {
+        return upcomingProjectionsRepository.findAllByMovieId(movieId);
+    }
 }

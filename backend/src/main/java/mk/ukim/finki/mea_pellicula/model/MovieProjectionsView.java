@@ -26,10 +26,10 @@ public class MovieProjectionsView {
     @Column(name = "start_date")
     LocalDateTime startDate;
 
-    public MovieProjectionsView() {
-    }
+    public MovieProjectionsView() { }
 
-    public MovieProjectionsView(Long movieId, String title, String city, String cinemaName, String cinemaRoom, LocalDateTime startDate) {
+    public MovieProjectionsView(Long movieId, String title, String city, String cinemaName, String cinemaRoom,
+                                LocalDateTime startDate) {
         this.movieId = movieId;
         this.title = title;
         this.city = city;
