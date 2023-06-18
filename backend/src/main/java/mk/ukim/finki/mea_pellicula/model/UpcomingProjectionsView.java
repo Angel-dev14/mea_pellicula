@@ -1,16 +1,17 @@
 package mk.ukim.finki.mea_pellicula.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "upcoming_projections")
 public class UpcomingProjectionsView {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
     @Column(name = "movie_id")
     Long movieId;
 
@@ -32,10 +33,12 @@ public class UpcomingProjectionsView {
     @Column(name = "dates")
     LocalDateTime startDate;
 
-    public UpcomingProjectionsView() { }
+    public UpcomingProjectionsView() {
+    }
 
-    public UpcomingProjectionsView(Long movieId, String title, Long cinemaId, String cinemaName, Long cityId,
+    public UpcomingProjectionsView(UUID id, Long movieId, String title, Long cinemaId, String cinemaName, Long cityId,
                                    String cityName, LocalDateTime startDate) {
+        this.id = id;
         this.movieId = movieId;
         this.title = title;
         this.cinemaId = cinemaId;
@@ -43,6 +46,10 @@ public class UpcomingProjectionsView {
         this.cityId = cityId;
         this.cityName = cityName;
         this.startDate = startDate;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public Long getMovieId() {
