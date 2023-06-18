@@ -1,4 +1,4 @@
-package mk.ukim.finki.mea_pellicula.model;
+package mk.ukim.finki.mea_pellicula.model.views;
 
 import jakarta.persistence.*;
 
@@ -25,6 +25,7 @@ public class MovieProjectionsView {
 
     @Column(name = "start_date")
     LocalDateTime startDate;
+
 
     public MovieProjectionsView() { }
 

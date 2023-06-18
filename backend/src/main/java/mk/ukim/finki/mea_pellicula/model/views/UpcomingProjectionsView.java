@@ -1,4 +1,4 @@
-package mk.ukim.finki.mea_pellicula.model;
+package mk.ukim.finki.mea_pellicula.model.views;
 
 import jakarta.persistence.*;
 
@@ -33,11 +33,15 @@ public class UpcomingProjectionsView {
     @Column(name = "dates")
     LocalDateTime startDate;
 
+    @Column(name = "movie_screening_id")
+    Long movieScreeningId;
+
     public UpcomingProjectionsView() {
     }
 
     public UpcomingProjectionsView(UUID id, Long movieId, String title, Long cinemaId, String cinemaName, Long cityId,
-                                   String cityName, LocalDateTime startDate) {
+                                   String cityName, LocalDateTime startDate,
+                                   Long movieScreeningId) {
         this.id = id;
         this.movieId = movieId;
         this.title = title;
@@ -46,6 +50,7 @@ public class UpcomingProjectionsView {
         this.cityId = cityId;
         this.cityName = cityName;
         this.startDate = startDate;
+        this.movieScreeningId = movieScreeningId;
     }
 
     public UUID getId() {
@@ -78,5 +83,9 @@ public class UpcomingProjectionsView {
 
     public LocalDateTime getStartDate() {
         return startDate;
+    }
+
+    public Long getMovieScreeningId() {
+        return movieScreeningId;
     }
 }

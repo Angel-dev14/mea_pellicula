@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="show movie projections for next month - frontend" />
-    <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="">
+    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieScreeningSeatsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreeningSeats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/Seat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningSeatsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningSeatsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/movie-screening-seats.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/seat.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/movie-screening-seats.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mea_pellicula.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieProjectionsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/views/MovieProjectionsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/UpcomingProjectionsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/views/UpcomingProjectionsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieProjectionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieProjectionsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/upcoming-movie-projection.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/upcoming-movie-projection.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
     </list>
+    <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -21,13 +101,70 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula\frontend\node_modules\typescript\lib" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/angel/fakultet/napredi bazi na podatoci/mea_pellicula&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\angel\\fakultet\\napredi bazi na podatoci\\mea_pellicula\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\angel\fakultet\napredi bazi na podatoci\mea_pellicula" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Remote JVM Debug.JvmDebug">
+    <configuration name="C:/Users/angel/fakultet/napredi bazi na podatoci/mea_pellicula/settings.gradle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/settings.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="JvmDebug" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5005" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.C:/Users/angel/fakultet/napredi bazi na podatoci/mea_pellicula/settings.gradle" />
+      <item itemvalue="Remote JVM Debug.JvmDebug" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.C:/Users/angel/fakultet/napredi bazi na podatoci/mea_pellicula/settings.gradle" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -42,14 +179,18 @@
       <workItem from="1686992699505" duration="961000" />
       <workItem from="1687028830868" duration="283000" />
       <workItem from="1687029390175" duration="290000" />
-      <workItem from="1687029886387" duration="160000" />
+      <workItem from="1687095835871" duration="139000" />
+      <workItem from="1687095984749" duration="643000" />
+      <workItem from="1687096769249" duration="927000" />
+      <workItem from="1687097714961" duration="236000" />
+      <workItem from="1687097960382" duration="133000" />
     </task>
-    <task id="LOCAL-00001" summary="show movie projections for next month - frontend">
-      <created>1687029954589</created>
+    <task id="LOCAL-00001" summary="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save">
+      <created>1687110105418</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1687029954589</updated>
+      <updated>1687110105418</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -69,7 +210,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="show movie projections for next month - frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="show movie projections for next month - frontend" />
+    <MESSAGE value="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save" />
+    <option name="LAST_COMMIT_MESSAGE" value="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save" />
   </component>
 </project>

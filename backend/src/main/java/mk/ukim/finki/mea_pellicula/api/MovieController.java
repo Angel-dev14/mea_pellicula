@@ -1,8 +1,8 @@
 package mk.ukim.finki.mea_pellicula.api;
 
-import mk.ukim.finki.mea_pellicula.model.UpcomingProjectionsView;
+import mk.ukim.finki.mea_pellicula.model.views.UpcomingProjectionsView;
 import mk.ukim.finki.mea_pellicula.service.MovieService;
-import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
+import mk.ukim.finki.mea_pellicula.model.views.MovieProjectionsView;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/movies")
-public class MovieController {
+public class    MovieController {
 
     private final MovieService movieService;
 
