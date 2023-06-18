@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-6 mt-1" *ngFor="let movieProjection of movieProjections">
-      <movie-card [movieProjection]="movieProjection"></movie-card>
+    <div class="col-6 mt-2" *ngFor="let movieProjection of movieProjections">
+      <movie-card (selectedMovie$)="showUpcomingProjectionForSelectedMovie($event)"
+                  [movieProjection]="movieProjection"></movie-card>
     </div>
   </div>
 </div>
