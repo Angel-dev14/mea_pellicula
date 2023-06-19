@@ -22,7 +22,7 @@ public class MovieService {
                         MovieRepository movieRepository) {
         this.movieProjectionsRepository = movieProjectionsRepository;
         this.upcomingProjectionsRepository = upcomingProjectionsRepository;
-        this.movieRepository=movieRepository;
+        this.movieRepository = movieRepository;
     }
 
     public List<MovieProjectionsView> getAllMovieProjectionsForNextMonth() {
@@ -32,21 +32,19 @@ public class MovieService {
     public List<UpcomingProjectionsView> getInfoAboutUpcomingProjectionsOfMovie(Long movieId) {
         return upcomingProjectionsRepository.findAllByMovieId(movieId);
     }
-    public Movie saveOrUpdateMovie(Long id, String title, String description, LocalDateTime dateReleased, String imdbLink, Integer duration, Boolean is3d )
-    {
-        Movie m=movieRepository.findMovieById(id);
-        if(m!=null)
-        {
+
+    public Movie saveOrUpdateMovie(Long id, String title, String description, LocalDateTime dateReleased,
+                                   String imdbLink, Integer duration, Boolean is3d) {
+        Movie m = movieRepository.findMovieById(id);
+        if (m != null) {
             m.setTitle(title);
             m.setDescription(description);
             m.setDateReleased(dateReleased);
             m.setImdbLink(imdbLink);
             m.setDuration(duration);
             m.setIs3d(is3d);
-        }
-        else
-        {
-         m=new Movie(title,description,dateReleased,imdbLink,duration,is3d);
+        } else {
+            m = new Movie(title, description, dateReleased, imdbLink, duration, is3d);
         }
         return movieRepository.save(m);
     }

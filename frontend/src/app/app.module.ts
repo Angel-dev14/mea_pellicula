@@ -6,8 +6,9 @@ import {AppComponent} from './app.component';
 import {ListNextMonthProjectionsComponent} from './list-next-month-projections/list-next-month-projections.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MovieCardComponent} from './movie-card/movie-card.component';
-import { UpcomingProjectionsInfoComponent } from './upcoming-projections-info/upcoming-projections-info.component';
-import { UpcomingProjectionCardComponent } from './upcoming-projection-card/upcoming-projection-card.component';
+import {UpcomingProjectionsInfoComponent} from './upcoming-projections-info/upcoming-projections-info.component';
+import {UpcomingProjectionCardComponent} from './upcoming-projection-card/upcoming-projection-card.component';
+import {NavBarComponent} from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UpcomingProjectionCardComponent } from './upcoming-projection-card/upco
     ListNextMonthProjectionsComponent,
     MovieCardComponent,
     UpcomingProjectionsInfoComponent,
-    UpcomingProjectionCardComponent
+    UpcomingProjectionCardComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
