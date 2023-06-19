@@ -28,15 +28,15 @@ public class MovieController {
     List<UpcomingProjectionsView> getInfoForUpcomingProjection(@PathVariable Long movieId) {
         return movieService.getInfoAboutUpcomingProjectionsOfMovie(movieId);
     }
+
     @PostMapping("/add-movie/{movieId}")
     Movie addMovie(@PathVariable(name = "movieId") Long id,
-                   @RequestParam(name="title", required = true) String title,
-                   @RequestParam(name="description", required = true) String description,
-                   @RequestParam(name="dateReleased", required = true) LocalDateTime dateTime,
-                   @RequestParam(name="imdbLink", required = true) String imdbLink,
-                   @RequestParam(name="duration", required = true) Integer duration,
-                   @RequestParam(name="is3d", required = true) Boolean is3d)
-    {
-      return movieService.saveOrUpdateMovie(id, title,description,dateTime,imdbLink,duration,is3d);
+                   @RequestParam(name = "title", required = true) String title,
+                   @RequestParam(name = "description", required = true) String description,
+                   @RequestParam(name = "dateReleased", required = true) LocalDateTime dateTime,
+                   @RequestParam(name = "imdbLink", required = true) String imdbLink,
+                   @RequestParam(name = "duration", required = true) Integer duration,
+                   @RequestParam(name = "is3d", required = true) Boolean is3d) {
+        return movieService.saveOrUpdateMovie(id, title, description, dateTime, imdbLink, duration, is3d);
     }
 }
