@@ -11,6 +11,7 @@ import {UpcomingProjectionCardComponent} from './upcoming-projection-card/upcomi
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MovieScreeningComponent } from './movie-screening/movie-screening.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     UpcomingProjectionsInfoComponent,
     UpcomingProjectionCardComponent,
     NavBarComponent,
-    AddNewMovieComponent
+    AddNewMovieComponent,
+    MovieScreeningComponent
   ],
   imports: [
     BrowserModule,
