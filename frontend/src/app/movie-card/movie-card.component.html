@@ -1,7 +1,8 @@
 <div class="container">
   <div class="card text-center" style="height: 150px;">
     <div class="card-body">
-      <h4 class="card-title" style="height: 70px;">{{ capitalizeFirstLetter(movieProjection?.title) }}</h4>
+      <h4 class="card-title"
+          style="height: 70px;">{{ helperService.capitalizeFirstLetter(movieProjection?.title) }}</h4>
       <button *ngIf="movieProjection?.movieId !== undefined" type="button" class="btn btn-info"
               (click)="showUpcomingProjection(movieProjection!!.movieId)">Show Info
       </button>
