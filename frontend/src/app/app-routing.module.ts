@@ -4,11 +4,17 @@ import {ListNextMonthProjectionsComponent} from "./list-next-month-projections/l
 import {UpcomingProjectionsInfoComponent} from "./upcoming-projections-info/upcoming-projections-info.component";
 import {AddNewMovieComponent} from "./add-new-movie/add-new-movie.component"
 import {MovieScreeningComponent} from './movie-screening/movie-screening.component';
+import {LoginComponent} from "./login/login.component";
+import {RegisterComponent} from "./register/register.component";
+import {AddNewMovieComponent} from "./add-new-movie/add-new-movie.component";
 
 const routes: Routes = [
   {path: 'movies/next-month-projections', component: ListNextMonthProjectionsComponent},
   {path: 'movies/add-new-movie', component: AddNewMovieComponent},
   {path: 'movies/upcoming-projections-info/:movieId', component: UpcomingProjectionsInfoComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'}
   {path: 'movies/add-movie-screening', component: MovieScreeningComponent},
   {path: '', redirectTo: 'movies/next-month-projections', pathMatch: 'full'}
 ];
