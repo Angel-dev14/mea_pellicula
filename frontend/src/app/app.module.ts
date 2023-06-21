@@ -13,7 +13,6 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RegisterComponent } from './register/register.component';
 import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +23,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     UpcomingProjectionCardComponent,
     NavBarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
     NavBarComponent,
     AddNewMovieComponent
   ],

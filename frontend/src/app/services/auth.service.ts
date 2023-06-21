@@ -2,13 +2,20 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Login} from "../models/login.model";
 import {User} from "../models/user.model";
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   path = 'api/user';
+
+  private user = new Subject<User>();
+
+  public userEmitter = this.user.asObservable();
+  userEmitChange(usr: User) {
+    this.user.next(usr);
+  }
 
   constructor(private http: HttpClient) {
   }

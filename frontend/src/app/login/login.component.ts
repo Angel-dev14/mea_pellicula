@@ -17,21 +17,23 @@ export class LoginComponent {
       email: new FormControl(),
       password: new FormControl(),
     });
+
+    localStorage.clear();
   }
 
   onSubmit() {
-    console.log(this.form.getRawValue());
     this.authService.login(this.form.getRawValue()).subscribe({
       next: (user) => {
-        console.log(user);
         if (user === null) {
           this.showErrorMessage = true;
         } else {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.authService.userEmitChange(user);
           this.router.navigate(['movies/next-month-projections']);
         }
       },
       error: (err) => {
-        console.error(err.message());
+        console.error(err.message);
       }
     });
   }
