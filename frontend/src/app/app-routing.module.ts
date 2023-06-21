@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ListNextMonthProjectionsComponent} from "./list-next-month-projections/list-next-month-projections.component";
 import {UpcomingProjectionsInfoComponent} from "./upcoming-projections-info/upcoming-projections-info.component";
 import {AddNewMovieComponent} from "./add-new-movie/add-new-movie.component"
-import { MovieScreeningComponent } from './movie-screening/movie-screening.component';
+import {MovieScreeningComponent} from './movie-screening/movie-screening.component';
 
 const routes: Routes = [
   {path: 'movies/next-month-projections', component: ListNextMonthProjectionsComponent},

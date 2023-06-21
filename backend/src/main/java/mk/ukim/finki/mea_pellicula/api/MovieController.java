@@ -8,10 +8,7 @@ import mk.ukim.finki.mea_pellicula.service.MovieService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +21,7 @@ public class MovieController {
 
     public MovieController(MovieService movieService, MovieScreeningService movieScreeningService) {
         this.movieService = movieService;
-        this.movieScreeningService=movieScreeningService;
+        this.movieScreeningService = movieScreeningService;
     }
 
     @GetMapping("/projections-next-month")
@@ -46,16 +43,12 @@ public class MovieController {
                    @RequestParam(name = "is3d") Boolean is3d) {
         return movieService.saveOrUpdateMovie(title, description, dateTime, imdbLink, duration, is3d);
     }
-    @PostMapping("/add-movie-screening")
-    String addMovieScreeningProjection(@RequestParam(name="movieId") Long movieId,
-                                       @RequestParam(name="startDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
-                                       @RequestParam(name="basePrice") Long basePrice,
-                                       @RequestParam(name="cinemaRoomId") Long cinemaRoomId)
-    {
 
-        /*LocalDateTime startDate = LocalDateTime.of(3022, Month.JULY, 29, 19, 30, 40);
-        double basePrice=5.5;
-        Long cinemaRoomId= Long.parseLong("4");*/
-        return this.movieScreeningService.addMovieScreening(startDate,basePrice,movieId, cinemaRoomId);
+    @PostMapping("/add-movie-screening")
+    String addMovieScreeningProjection(@RequestParam(name = "movieId") Long movieId,
+                                       @RequestParam(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
+                                       @RequestParam(name = "basePrice") Long basePrice,
+                                       @RequestParam(name = "cinemaRoomId") Long cinemaRoomId) {
+        return this.movieScreeningService.addMovieScreening(startDate, basePrice, movieId, cinemaRoomId);
     }
 }

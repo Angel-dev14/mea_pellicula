@@ -3,7 +3,6 @@ package mk.ukim.finki.mea_pellicula.service;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import java.security.Timestamp;
 import java.time.LocalDateTime;
 
 @Service
@@ -19,9 +18,7 @@ public class MovieScreeningService {
         try {
             jdbcTemplate.update(procedureCall, startDate, basePrice, movieId, cinemaRoomId);
             return "Adding successfull";
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return e.getMessage();
         }
     }

@@ -1,17 +1,15 @@
-.input_field
-{
-    width: 15%;
-    margin-top:2%;
+.input_field {
+  width: 15%;
+  margin-top: 2%;
 }
-.input_field > label
-{
-    font-weight: bolder;
+
+.input_field > label {
+  font-weight: bolder;
 }
 
 .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
- 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
