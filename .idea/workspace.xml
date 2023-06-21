@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="implement simple navbar" />
+    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="implement add new movie backend/frontend">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/config/DatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V__get_users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/login.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/user.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/register/register.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+    </list>
     <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="no commit">
       <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
@@ -40,10 +64,18 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="add-new-movie" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,16 +93,18 @@
   </component>
   <component name="ProjectId" id="2RCopW5xAg9PqixnE6E5irailio" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="openjdk-18" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Praksa-Sorsix/back-end/final-final-project" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -79,15 +113,19 @@
     <property name="ts.external.directory.path" value="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula\frontend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="mk.ukim.finki.mea_pellicula.service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula\backend" />
       <recent name="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula\frontend\src\app\models" />
       <recent name="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]">
+  <component name="RunManager" selected="Remote JVM Debug.Local Debug JVM">
     <configuration name="D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -110,6 +148,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Local Debug JVM" type="Remote">
+      <module name="mk.ukim.finki.mea_pellicula" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5005" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mk.ukim.finki.mea_pellicula.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.mea_pellicula.BackendApplication" />
@@ -117,8 +169,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
+      <item itemvalue="Remote JVM Debug.Local Debug JVM" />
+      <item itemvalue="Spring Boot.BackendApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
         <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
       </list>
     </recent_temporary>
@@ -152,6 +210,8 @@
       <workItem from="1687199441894" duration="1384000" />
       <workItem from="1687202210641" duration="90000" />
       <workItem from="1687202327529" duration="3166000" />
+      <workItem from="1687268582540" duration="19262000" />
+      <workItem from="1687362759589" duration="1852000" />
     </task>
     <task id="LOCAL-00001" summary="show movie projections for next month - frontend">
       <created>1687029954589</created>
@@ -167,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687205186970</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implement add new movie backend/frontend">
+      <created>1687278443025</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687278443025</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +254,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="show movie projections for next month - frontend" />
     <MESSAGE value="implement simple navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement simple navbar" />
+    <MESSAGE value="implement add new movie backend/frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement add new movie backend/frontend" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
