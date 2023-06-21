@@ -9,8 +9,10 @@ import {MovieCardComponent} from './movie-card/movie-card.component';
 import {UpcomingProjectionsInfoComponent} from './upcoming-projections-info/upcoming-projections-info.component';
 import {UpcomingProjectionCardComponent} from './upcoming-projection-card/upcoming-projection-card.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
-import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
+import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RegisterComponent } from './register/register.component';
+import { AddNewMovieComponent } from './add-new-movie/add-new-movie.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MovieCardComponent,
     UpcomingProjectionsInfoComponent,
     UpcomingProjectionCardComponent,
+    NavBarComponent,
+    LoginComponent,
+    RegisterComponent,
     NavBarComponent,
     AddNewMovieComponent
   ],

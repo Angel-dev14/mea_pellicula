@@ -23,7 +23,6 @@ export class AddNewMovieComponent {
   }
 
   onSubmit() {
-    console.log(this.form.getRawValue());
     this.movieService.addNewMovie(this.form.getRawValue()).subscribe({
       next: () => {
         this.router.navigate(['movies/next-month-projections']);
