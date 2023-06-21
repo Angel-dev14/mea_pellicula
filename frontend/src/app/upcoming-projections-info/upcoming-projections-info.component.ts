@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {filter, map, mergeMap} from "rxjs";
+import {filter, map, mergeMap, Subject, takeUntil} from "rxjs";
 import {MovieService} from "../services/movie.service";
 import {UpcomingMovieProjection} from "../models/upcoming-movie-projection.model";
 
@@ -9,7 +9,9 @@ import {UpcomingMovieProjection} from "../models/upcoming-movie-projection.model
   templateUrl: './upcoming-projections-info.component.html',
   styleUrls: ['./upcoming-projections-info.component.css']
 })
-export class UpcomingProjectionsInfoComponent implements OnInit {
+export class UpcomingProjectionsInfoComponent implements OnInit, OnDestroy {
+  onDestroy$ = new Subject<void>();
+
   upcomingMovieProjections: UpcomingMovieProjection[] = [];
 
   constructor(private route: ActivatedRoute, private movieService: MovieService,) {
@@ -17,6 +19,7 @@ export class UpcomingProjectionsInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.pipe(
+      takeUntil(this.onDestroy$),
       filter(params => params.has('movieId')),
       map(params => +params.get('movieId')!),
       mergeMap(id => this.movieService.getInfoForUpcomingProjections(id))
@@ -28,5 +31,9 @@ export class UpcomingProjectionsInfoComponent implements OnInit {
         console.error(err.error.message);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next();
   }
 }
