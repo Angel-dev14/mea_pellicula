@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
   {path: 'movies/add-movie-screening', component: MovieScreeningComponent},
+  {path: 'movies/add-movie-screening/:movieId', component: MovieScreeningComponent},
   {path: '', redirectTo: 'movies/next-month-projections', pathMatch: 'full'}
 ];
 

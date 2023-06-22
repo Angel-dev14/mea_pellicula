@@ -22,6 +22,24 @@
       <button type="submit" class="btn btn-info me-3">Save</button>
       <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
     </div>
+  <div class="from_text">Add a movie screening</div>
+   <form (ngSubmit)="onSubmit()" [formGroup]="form" ngNativeValidate>
+      <div class="input_field">
+        <label for="startDate" class="form-label">Start date</label>
+        <input type="datetime-local" id="startDate" name="startDate" class="form-control" formControlName="startDate" required>
+      </div>
+      <div class="input_field">
+        <label for="basePrice" class="form-label">Base price</label>
+        <input type="number" name="basePrice" class="form-control" formControlName="basePrice">
+      </div>
+      <div class="input_field">
+        <label for="cinemaRoomId" class="form-label">Cinema Room Number</label>
+        <input type="number" min="1" class="form-control" id="cinemaRoomId" name="cinemaRoomId" formControlName="cinemaRoomId" required>
+      </div>
+      <div class="input_field">
+        <button type="submit" class="btn btn-info me-3">Save</button>
+       <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      </div>
   </form>
 </div>
 

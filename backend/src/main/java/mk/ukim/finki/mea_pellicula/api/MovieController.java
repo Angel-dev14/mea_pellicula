@@ -1,5 +1,7 @@
 package mk.ukim.finki.mea_pellicula.api;
 
+import mk.ukim.finki.mea_pellicula.Dtos.MovieProjectionAndRatingDto;
+import mk.ukim.finki.mea_pellicula.model.AverageRatingView;
 import mk.ukim.finki.mea_pellicula.model.Movie;
 import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
 import mk.ukim.finki.mea_pellicula.model.UpcomingProjectionsView;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/movies")
@@ -33,6 +36,10 @@ public class MovieController {
     List<UpcomingProjectionsView> getInfoForUpcomingProjection(@PathVariable Long movieId) {
         return movieService.getInfoAboutUpcomingProjectionsOfMovie(movieId);
     }
+    @GetMapping("/get-average-rating/{movieId}")
+    AverageRatingView getRatingForUpcomingProjection(@PathVariable Long movieId) {
+        return movieService.getAllRatingsForMovieWithId(movieId).orElseThrow();
+    }
 
     @PostMapping("/add-movie")
     Movie addMovie(@RequestParam(name = "title") String title,
@@ -50,5 +57,12 @@ public class MovieController {
                                        @RequestParam(name = "basePrice") Long basePrice,
                                        @RequestParam(name = "cinemaRoomId") Long cinemaRoomId) {
         return this.movieScreeningService.addMovieScreening(startDate, basePrice, movieId, cinemaRoomId);
+    Map<String,String> addMovieScreeningProjection(@RequestParam(name="movieId") Long movieId,
+                                                   @RequestParam(name="startDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
+                                                   @RequestParam(name="basePrice") Long basePrice,
+                                                   @RequestParam(name="cinemaRoomId") Long cinemaRoomId)
+    {
+
+        return Map.of("Message", this.movieScreeningService.addMovieScreening(startDate,basePrice,movieId, cinemaRoomId));
     }
 }

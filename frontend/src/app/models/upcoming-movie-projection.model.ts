@@ -6,5 +6,5 @@ export interface UpcomingMovieProjection {
   cinemaName: string,
   cityId: bigint,
   cityName: string,
-  startDate: Date
+  startDate: Date,
 }

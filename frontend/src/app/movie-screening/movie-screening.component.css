@@ -1,6 +1,14 @@
 .input_field {
   width: 15%;
   margin-top: 2%;
+form
+{
+  align-self: center;
+}
+.input_field
+{
+    width: 15%;
+    margin-top:2%;
 }
 
 .input_field > label {
@@ -11,5 +19,14 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+
+.from_text
+{
+    margin-top: 5vh;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
 }
 

@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <div class="average_rating">The average rating for this movie is {{averageRating?.averageRating}} from {{averageRating?.numberOfRatings}} ratings.</div>
     <div class="col-12 mt-2" *ngFor="let upcomingMovieProjection of upcomingMovieProjections">
       <upcoming-projection-card [upcomingMovieProjection]="upcomingMovieProjection"></upcoming-projection-card>
     </div>
