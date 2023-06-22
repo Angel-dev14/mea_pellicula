@@ -28,16 +28,17 @@ public class MovieService {
         this.movieProjectionsRepository = movieProjectionsRepository;
         this.upcomingProjectionsRepository = upcomingProjectionsRepository;
         this.movieRepository = movieRepository;
-        this.averageRatingRepository=averageRatingRepository;
+        this.averageRatingRepository = averageRatingRepository;
     }
 
     public List<MovieProjectionsView> getAllMovieProjectionsForNextMonth() {
         return movieProjectionsRepository.findAll();
     }
-    public Optional<AverageRatingView> getAllRatingsForMovieWithId(Long movieId)
-    {
+
+    public Optional<AverageRatingView> getAllRatingsForMovieWithId(Long movieId) {
         return averageRatingRepository.findById(movieId);
     }
+
     public List<UpcomingProjectionsView> getInfoAboutUpcomingProjectionsOfMovie(Long movieId) {
         return upcomingProjectionsRepository.findAllByMovieId(movieId);
     }

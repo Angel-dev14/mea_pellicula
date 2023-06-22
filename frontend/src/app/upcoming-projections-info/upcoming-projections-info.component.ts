@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {filter, map, mergeMap, Subject, takeUntil} from "rxjs";
 import {MovieService} from "../services/movie.service";
-import { UpcomingMovieProjection } from '../models/upcoming-movie-projection.model';
-import { AverageRating } from '../models/average-rating.model';
+import {UpcomingMovieProjection} from '../models/upcoming-movie-projection.model';
+import {AverageRating} from '../models/average-rating.model';
 
 @Component({
   selector: 'upcoming-projections-info',
@@ -15,7 +15,7 @@ export class UpcomingProjectionsInfoComponent implements OnInit, OnDestroy {
 
   upcomingMovieProjections: UpcomingMovieProjection[] = [];
   averageRating: AverageRating | undefined;
-  
+
   constructor(private route: ActivatedRoute, private movieService: MovieService,) {
   }
 
@@ -40,15 +40,15 @@ export class UpcomingProjectionsInfoComponent implements OnInit, OnDestroy {
       mergeMap(id => this.movieService.getRatingForMovie(id))
     ).subscribe({
       next: (data) => {
-        console.log(data);
-       this.averageRating=data;
+        this.averageRating = data;
       },
       error: (err) => {
         console.error(err.error.message);
       }
     });
   }
+
   ngOnDestroy(): void {
-    this.onDestroy$.next();
+    this.onDestroy$.next(null);
   }
 }

@@ -27,11 +27,10 @@ export class ListNextMonthProjectionsComponent implements OnInit {
   }
 
   showUpcomingProjectionForSelectedMovie(movieId: bigint) {
-    console.log("called here in other");
     this.router.navigate(['movies/upcoming-projections-info', movieId]);
   }
+
   createAScreening(movieId: bigint) {
-    console.log("called here");
     this.router.navigate(['movies/add-movie-screening', movieId]);
   }
 }

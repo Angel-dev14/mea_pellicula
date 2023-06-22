@@ -14,9 +14,11 @@ export class MovieCardComponent {
 
   constructor(public helperService: HelperService) {
   }
+
   showUpcomingProjection(movieId: bigint) {
     this.selectedMovie$.emit(movieId);
   }
+
   createAScreening(movieId: bigint) {
     this.selectedMovieAddScreening$.emit(movieId);
   }

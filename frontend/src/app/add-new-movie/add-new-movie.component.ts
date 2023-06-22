@@ -31,7 +31,6 @@ export class AddNewMovieComponent {
         console.error(err);
       }
     });
-
   }
 
   cancel() {

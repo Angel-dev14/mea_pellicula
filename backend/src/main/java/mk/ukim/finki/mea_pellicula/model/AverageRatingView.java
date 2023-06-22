@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class AverageRatingView {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="movie_id")
+    @Column(name = "movie_id")
     Long Id;
 
     @Column(name = "title")
@@ -16,10 +16,11 @@ public class AverageRatingView {
     @Column(name = "average_rating")
     Double averageRating;
 
-    @Column(name="number_of_ratings")
+    @Column(name = "number_of_ratings")
     Integer numberOfRatings;
 
-    public AverageRatingView(){}
+    public AverageRatingView() {
+    }
 
     public AverageRatingView(Long id, String title, Double averageRating, Integer numberOfRatings) {
         Id = id;

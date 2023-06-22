@@ -1,6 +1,5 @@
 package mk.ukim.finki.mea_pellicula.api;
 
-import mk.ukim.finki.mea_pellicula.Dtos.MovieProjectionAndRatingDto;
 import mk.ukim.finki.mea_pellicula.model.AverageRatingView;
 import mk.ukim.finki.mea_pellicula.model.Movie;
 import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
@@ -36,6 +35,7 @@ public class MovieController {
     List<UpcomingProjectionsView> getInfoForUpcomingProjection(@PathVariable Long movieId) {
         return movieService.getInfoAboutUpcomingProjectionsOfMovie(movieId);
     }
+
     @GetMapping("/get-average-rating/{movieId}")
     AverageRatingView getRatingForUpcomingProjection(@PathVariable Long movieId) {
         return movieService.getAllRatingsForMovieWithId(movieId).orElseThrow();
@@ -52,17 +52,10 @@ public class MovieController {
     }
 
     @PostMapping("/add-movie-screening")
-    String addMovieScreeningProjection(@RequestParam(name = "movieId") Long movieId,
-                                       @RequestParam(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
-                                       @RequestParam(name = "basePrice") Long basePrice,
-                                       @RequestParam(name = "cinemaRoomId") Long cinemaRoomId) {
-        return this.movieScreeningService.addMovieScreening(startDate, basePrice, movieId, cinemaRoomId);
-    Map<String,String> addMovieScreeningProjection(@RequestParam(name="movieId") Long movieId,
-                                                   @RequestParam(name="startDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
-                                                   @RequestParam(name="basePrice") Long basePrice,
-                                                   @RequestParam(name="cinemaRoomId") Long cinemaRoomId)
-    {
-
-        return Map.of("Message", this.movieScreeningService.addMovieScreening(startDate,basePrice,movieId, cinemaRoomId));
+    Map<String, String> addMovieScreeningProjection(@RequestParam(name = "movieId") Long movieId,
+                                                    @RequestParam(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
+                                                    @RequestParam(name = "basePrice") Long basePrice,
+                                                    @RequestParam(name = "cinemaRoomId") Long cinemaRoomId) {
+        return Map.of("Message", this.movieScreeningService.addMovieScreening(startDate, basePrice, movieId, cinemaRoomId));
     }
 }
