@@ -49,6 +49,6 @@ export class UpcomingProjectionsInfoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.onDestroy$.next(null);
+    this.onDestroy$.next();
   }
 }
