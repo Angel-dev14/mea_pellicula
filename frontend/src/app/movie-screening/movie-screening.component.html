@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="from_text">Add a movie screening</div>
    <form (ngSubmit)="onSubmit()" [formGroup]="form" ngNativeValidate>
       <div class="input_field">
         <label for="startDate" class="form-label">Start date</label>
@@ -7,10 +8,6 @@
       <div class="input_field">
         <label for="basePrice" class="form-label">Base price</label>
         <input type="number" name="basePrice" class="form-control" formControlName="basePrice">
-      </div>
-      <div class="input_field">
-        <label for="movieId" class="form-label">Movie Number</label>
-        <input type="number" class="form-control" id="movieId" name="movieId" formControlName="movieId" required>
       </div>
       <div class="input_field">
         <label for="cinemaRoomId" class="form-label">Cinema Room Number</label>

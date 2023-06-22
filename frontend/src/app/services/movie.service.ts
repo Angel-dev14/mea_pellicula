@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {MovieProjection} from "../models/movie-projection.model";
 import {UpcomingMovieProjection} from "../models/upcoming-movie-projection.model";
 import {Movie} from "../models/movie.model";
+import { AverageRating } from '../models/average-rating.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class MovieService {
 
   getInfoForUpcomingProjections(movieId: number): Observable<UpcomingMovieProjection[]> {
     return this.http.get<UpcomingMovieProjection[]>(`${this.path}/upcoming-projection/${movieId}`);
+  }
+  getRatingForMovie(movieId:number):Observable<AverageRating>
+  {
+    return this.http.get<AverageRating>(`${this.path}/get-average-rating/${movieId}`);
   }
 
   addNewMovie(movie: Movie): Observable<any> {

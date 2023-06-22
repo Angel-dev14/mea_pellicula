@@ -3,31 +3,44 @@ package mk.ukim.finki.mea_pellicula.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "ratings")
-public class RatingView {
+@Table(name = "average_rating")
+public class AverageRatingView {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    @Column(name="rating")
-    int rating;
-    @Column(name = "movie_id")
-    Long movieId;
-    public RatingView(){}
+    @Column(name="movie_id")
+    Long Id;
 
-    public RatingView(int rating, Long movieId) {
-        this.rating = rating;
-        this.movieId = movieId;
+    @Column(name = "title")
+    String title;
+
+    @Column(name = "average_rating")
+    Double averageRating;
+
+    @Column(name="number_of_ratings")
+    Integer numberOfRatings;
+
+    public AverageRatingView(){}
+
+    public AverageRatingView(Long id, String title, Double averageRating, Integer numberOfRatings) {
+        Id = id;
+        this.title = title;
+        this.averageRating = averageRating;
+        this.numberOfRatings = numberOfRatings;
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
-    public int getRating() {
-        return rating;
+    public String getTitle() {
+        return title;
     }
 
-    public Long getMovieId() {
-        return movieId;
+    public Double getAverageRating() {
+        return averageRating;
+    }
+
+    public Integer getNumberOfRatings() {
+        return numberOfRatings;
     }
 }

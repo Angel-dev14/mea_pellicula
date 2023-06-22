@@ -10,11 +10,14 @@ import {HelperService} from "../services/helper.service";
 export class MovieCardComponent {
   @Input() movieProjection: MovieProjection | undefined;
   @Output() selectedMovie$ = new EventEmitter<bigint>();
+  @Output() selectedMovieAddScreening$ = new EventEmitter<bigint>();
 
   constructor(public helperService: HelperService) {
   }
-
   showUpcomingProjection(movieId: bigint) {
     this.selectedMovie$.emit(movieId);
+  }
+  createAScreening(movieId: bigint) {
+    this.selectedMovieAddScreening$.emit(movieId);
   }
 }
