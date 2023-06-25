@@ -1,16 +1,16 @@
-package mk.ukim.finki.mea_pellicula.model;
+package mk.ukim.finki.mea_pellicula.model.views;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Table(name = "upcoming_projections")
 public class UpcomingProjectionsView {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @Column(name = "token")
+    private String token;
 
     @Column(name = "movie_id")
     Long movieId;
@@ -33,12 +33,20 @@ public class UpcomingProjectionsView {
     @Column(name = "dates")
     LocalDateTime startDate;
 
+    @Column(name = "movie_screening_id")
+    Long movieScreeningId;
+
+    @Column(name = "movie_screening_price")
+    Double movieScreeningPrice;
+
     public UpcomingProjectionsView() {
     }
 
-    public UpcomingProjectionsView(UUID id, Long movieId, String title, Long cinemaId, String cinemaName, Long cityId,
-                                   String cityName, LocalDateTime startDate) {
-        this.id = id;
+    public UpcomingProjectionsView(String token, Long movieId, String title,
+                                   Long cinemaId, String cinemaName, Long cityId,
+                                   String cityName, LocalDateTime startDate,
+                                   Long movieScreeningId, Double movieScreeningPrice) {
+        this.token = token;
         this.movieId = movieId;
         this.title = title;
         this.cinemaId = cinemaId;
@@ -46,10 +54,12 @@ public class UpcomingProjectionsView {
         this.cityId = cityId;
         this.cityName = cityName;
         this.startDate = startDate;
+        this.movieScreeningId = movieScreeningId;
+        this.movieScreeningPrice = movieScreeningPrice;
     }
 
-    public UUID getId() {
-        return id;
+    public String getToken() {
+        return token;
     }
 
     public Long getMovieId() {
@@ -78,5 +88,13 @@ public class UpcomingProjectionsView {
 
     public LocalDateTime getStartDate() {
         return startDate;
+    }
+
+    public Long getMovieScreeningId() {
+        return movieScreeningId;
+    }
+
+    public Double getMovieScreeningPrice() {
+        return movieScreeningPrice;
     }
 }

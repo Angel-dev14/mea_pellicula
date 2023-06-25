@@ -1,12 +1,14 @@
-<div class="container">
-  <div class="card text-center" style="height: 150px;">
-    <div class="card-body">
-      <h4 class="card-title"
-          style="height: 45%;">{{ helperService.capitalizeFirstLetter(upcomingMovieProjection?.title) }}</h4>
-      <div class="card-text" style="font-size: 17px">{{ upcomingMovieProjection?.cityName }} |
-        {{ upcomingMovieProjection?.cinemaName }} |
-        {{ upcomingMovieProjection?.startDate | date:"dd.MM.YYYY HH:mm" }}
-      </div>
+<div class="card text-center" style="height: 150px;">
+  <div class="card-body p-2">
+    <h4 class="card-title" style="height: 45%;">{{ helperService.capitalizeFirstLetter(upcomingMovieProjection?.title) }}</h4>
+    <div class="card-text" style="font-size: 17px">{{ upcomingMovieProjection?.cityName }} |
+      {{ upcomingMovieProjection?.cinemaName }} |
+      {{ upcomingMovieProjection?.startDate | date:"dd.MM.YYYY HH:mm" }}
     </div>
+    <button class="mt-2" mat-raised-button color="primary"
+            (click)="navigateToMovieScreeningSeatSelection()"
+    >
+      Book Seats
+    </button>
   </div>
 </div>

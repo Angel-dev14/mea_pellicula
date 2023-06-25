@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {UpcomingMovieProjection} from "../models/upcoming-movie-projection.model";
+import {ActivatedRoute, Router} from '@angular/router';
 import {HelperService} from "../services/helper.service";
 
 @Component({
@@ -8,8 +9,16 @@ import {HelperService} from "../services/helper.service";
   styleUrls: ['./upcoming-projection-card.component.css']
 })
 export class UpcomingProjectionCardComponent {
+
   @Input() upcomingMovieProjection: UpcomingMovieProjection | undefined;
 
-  constructor(public helperService: HelperService) {
+  constructor(
+    public helperService: HelperService,
+    private _router: Router,
+  ) { }
+
+  navigateToMovieScreeningSeatSelection() {
+    this._router.navigate(['movies/movie-screening-seats',
+      this.upcomingMovieProjection?.movieScreeningId], {})
   }
 }

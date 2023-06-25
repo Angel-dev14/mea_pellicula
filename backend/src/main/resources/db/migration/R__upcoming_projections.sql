@@ -1,19 +1,20 @@
 drop view if exists upcoming_projections;
-create view upcoming_projections
-            (id, movie_id, title, cinema_id, cinema_name, city_id, city_name, dates) as
-(
-select gen_random_uuid(),
-       m.id    as movie_id,
+create or replace view upcoming_projections
+            (token, movie_id, title, cinema_id, cinema_name, city_id, city_name, dates, movie_screening_id,
+             movie_screening_price) as
+SELECT gen_random_uuid() as token,
+       m.id              AS movie_id,
        m.title,
-       c.id    as cinema_id,
-       c.name     cinema_name,
-       c2.id   as city_id,
-       c2.name as city_name,
-       ms.start_date
-from movie_screenings ms
-         join movies m on ms.movie_id = m.id
-         join cinema_rooms cr on ms.cinema_room_id = cr.id
-         join cinemas c on cr.cinema_id = c.id
-         join cities c2 on c.city_id = c2.id
-where ms.start_date >= now()
-    );
+       c.id              AS cinema_id,
+       c.name            AS cinema_name,
+       c2.id             AS city_id,
+       c2.name           AS city_name,
+       ms.start_date     AS dates,
+       ms.id             as movie_screening_id,
+       ms.base_price     as movie_screening_price
+FROM movie_screenings ms
+         JOIN movies m ON ms.movie_id = m.id
+         JOIN cinema_rooms cr ON ms.cinema_room_id = cr.id
+         JOIN cinemas c ON cr.cinema_id = c.id
+         JOIN cities c2 ON c.city_id = c2.id
+WHERE ms.start_date >= now();

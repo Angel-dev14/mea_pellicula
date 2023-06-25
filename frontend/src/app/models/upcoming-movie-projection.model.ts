@@ -1,5 +1,5 @@
 export interface UpcomingMovieProjection {
-  uuid: string,
+  token: string,
   movieId: bigint,
   title: string,
   cinemaId: bigint,
@@ -7,4 +7,6 @@ export interface UpcomingMovieProjection {
   cityId: bigint,
   cityName: string,
   startDate: Date,
+  movieScreeningId: number;
+  movieScreeningPrice: number;
 }

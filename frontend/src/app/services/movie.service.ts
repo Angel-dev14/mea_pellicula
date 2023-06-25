@@ -16,12 +16,16 @@ export class MovieService {
   constructor(private http: HttpClient) {
   }
 
+  getUpcomingMovieProjection(movieScreeningId: number): Observable<UpcomingMovieProjection> {
+    return this.http.get<UpcomingMovieProjection>(`${this.path}/upcoming-projection/${movieScreeningId}`)
+  }
+
   getMovieProjectionsForNextMonth(): Observable<MovieProjection[]> {
     return this.http.get<MovieProjection[]>(`${this.path}/projections-next-month`);
   }
 
   getInfoForUpcomingProjections(movieId: number): Observable<UpcomingMovieProjection[]> {
-    return this.http.get<UpcomingMovieProjection[]>(`${this.path}/upcoming-projection/${movieId}`);
+    return this.http.get<UpcomingMovieProjection[]>(`${this.path}/upcoming-projections/${movieId}`);
   }
 
   getRatingForMovie(movieId: number): Observable<AverageRating> {

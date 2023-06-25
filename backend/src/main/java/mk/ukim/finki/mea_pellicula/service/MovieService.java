@@ -1,9 +1,9 @@
 package mk.ukim.finki.mea_pellicula.service;
 
 import mk.ukim.finki.mea_pellicula.model.Movie;
-import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
+import mk.ukim.finki.mea_pellicula.model.views.MovieProjectionsView;
 import mk.ukim.finki.mea_pellicula.model.AverageRatingView;
-import mk.ukim.finki.mea_pellicula.model.UpcomingProjectionsView;
+import mk.ukim.finki.mea_pellicula.model.views.UpcomingProjectionsView;
 import mk.ukim.finki.mea_pellicula.repo.MovieProjectionsRepository;
 import mk.ukim.finki.mea_pellicula.repo.AverageRatingRepository;
 import mk.ukim.finki.mea_pellicula.repo.MovieRepository;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import java.util.Optional;
 
 @Service
@@ -30,6 +31,10 @@ public class MovieService {
         this.upcomingProjectionsRepository = upcomingProjectionsRepository;
         this.movieRepository = movieRepository;
         this.averageRatingRepository = averageRatingRepository;
+    }
+
+    public UpcomingProjectionsView getUpcomingProjection(Long movieScreeningId) {
+        return this.upcomingProjectionsRepository.findByMovieScreeningId(movieScreeningId);
     }
 
     public List<MovieProjectionsView> getAllMovieProjectionsForNextMonth() {

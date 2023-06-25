@@ -2,16 +2,19 @@ package mk.ukim.finki.mea_pellicula.api;
 
 import mk.ukim.finki.mea_pellicula.model.AverageRatingView;
 import mk.ukim.finki.mea_pellicula.model.Movie;
-import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
-import mk.ukim.finki.mea_pellicula.model.UpcomingProjectionsView;
+import mk.ukim.finki.mea_pellicula.model.views.UpcomingProjectionsView;
 import mk.ukim.finki.mea_pellicula.service.MovieScreeningService;
 import mk.ukim.finki.mea_pellicula.service.MovieService;
+import mk.ukim.finki.mea_pellicula.model.views.MovieProjectionsView;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -27,12 +30,17 @@ public class MovieController {
         this.movieScreeningService = movieScreeningService;
     }
 
+    @GetMapping("/upcoming-projection/{movieScreeningId}")
+    UpcomingProjectionsView getUpcomingProjection(@PathVariable Long movieScreeningId) {
+        return movieService.getUpcomingProjection(movieScreeningId);
+    }
+
     @GetMapping("/projections-next-month")
     List<MovieProjectionsView> getAllProjectionsForNextMonth() {
         return movieService.getAllMovieProjectionsForNextMonth();
     }
 
-    @GetMapping("/upcoming-projection/{movieId}")
+    @GetMapping("/upcoming-projections/{movieId}")
     List<UpcomingProjectionsView> getInfoForUpcomingProjection(@PathVariable Long movieId) {
         return movieService.getInfoAboutUpcomingProjectionsOfMovie(movieId);
     }
