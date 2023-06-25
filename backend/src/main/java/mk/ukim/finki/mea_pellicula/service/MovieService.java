@@ -10,6 +10,7 @@ import mk.ukim.finki.mea_pellicula.repo.MovieRepository;
 import mk.ukim.finki.mea_pellicula.repo.UpcomingProjectionsRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -43,7 +44,7 @@ public class MovieService {
         return upcomingProjectionsRepository.findAllByMovieId(movieId);
     }
 
-    public Movie saveOrUpdateMovie(String title, String description, Date dateReleased,
+    public Movie saveOrUpdateMovie(String title, String description, LocalDate dateReleased,
                                    String imdbLink, Integer duration, Boolean is3d) {
         return movieRepository.save(new Movie(title, description, dateReleased, imdbLink, duration, is3d));
     }

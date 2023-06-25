@@ -9,6 +9,7 @@ import mk.ukim.finki.mea_pellicula.service.MovieService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -44,11 +45,11 @@ public class MovieController {
     @PostMapping("/add-movie")
     Movie addMovie(@RequestParam(name = "title") String title,
                    @RequestParam(name = "description", required = false) String description,
-                   @RequestParam(name = "dateReleased") Date dateTime,
+                   @RequestParam(name = "dateReleased") LocalDate date,
                    @RequestParam(name = "imdbLink", required = false) String imdbLink,
                    @RequestParam(name = "duration") Integer duration,
                    @RequestParam(name = "is3d") Boolean is3d) {
-        return movieService.saveOrUpdateMovie(title, description, dateTime, imdbLink, duration, is3d);
+        return movieService.saveOrUpdateMovie(title, description, date, imdbLink, duration, is3d);
     }
 
     @PostMapping("/add-movie-screening")

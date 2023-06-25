@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="implement permissions :')">
+    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" afterDir="false" />
     </list>
     <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="no commit">
       <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
@@ -228,7 +229,7 @@
       <workItem from="1687268582540" duration="2842000" />
       <workItem from="1687372010408" duration="506000" />
       <workItem from="1687465065081" duration="2665000" />
-      <workItem from="1687685820414" duration="2036000" />
+      <workItem from="1687685820414" duration="3063000" />
     </task>
     <task id="LOCAL-00001" summary="show movie projections for next month - frontend">
       <created>1687029954589</created>
@@ -279,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687686810667</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=".">
+      <created>1687689188083</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687689188083</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,9 +309,9 @@
     <MESSAGE value="implement simple navbar" />
     <MESSAGE value="improvements" />
     <MESSAGE value="resolve merge conflicts" />
-    <MESSAGE value="." />
     <MESSAGE value="implement permissions :')" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement permissions :')" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
