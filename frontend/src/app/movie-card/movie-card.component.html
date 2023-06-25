@@ -6,7 +6,7 @@
       <button *ngIf="movieProjection?.movieId !== undefined" type="button" class="btn btn-info"
               (click)="showUpcomingProjection(movieProjection!!.movieId)">Show Info
       </button>
-      <button *ngIf="movieProjection?.movieId !== undefined" type="button" class="btn btn-info"
+      <button *ngIf="movieProjection?.movieId !== undefined && showAddMovieScreeningButton" type="button" class="btn btn-info"
               (click)="createAScreening(movieProjection!!.movieId)">Create a screening
       </button>
     </div>

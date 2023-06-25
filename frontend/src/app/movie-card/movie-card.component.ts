@@ -9,6 +9,7 @@ import {HelperService} from "../services/helper.service";
 })
 export class MovieCardComponent {
   @Input() movieProjection: MovieProjection | undefined;
+  @Input() showAddMovieScreeningButton: boolean | undefined;
   @Output() selectedMovie$ = new EventEmitter<bigint>();
   @Output() selectedMovieAddScreening$ = new EventEmitter<bigint>();
 
