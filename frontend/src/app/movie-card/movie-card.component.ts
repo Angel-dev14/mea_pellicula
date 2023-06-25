@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {MovieProjection} from "../models/movie-projection.model";
+import {HelperService} from "../services/helper.service";
 
 @Component({
   selector: 'movie-card',
@@ -8,16 +9,18 @@ import {MovieProjection} from "../models/movie-projection.model";
 })
 export class MovieCardComponent {
   @Input() movieProjection: MovieProjection | undefined;
+  @Input() showAddMovieScreeningButton: boolean | undefined;
   @Output() selectedMovie$ = new EventEmitter<bigint>();
+  @Output() selectedMovieAddScreening$ = new EventEmitter<bigint>();
+
+  constructor(public helperService: HelperService) {
+  }
 
   showUpcomingProjection(movieId: bigint) {
     this.selectedMovie$.emit(movieId);
   }
 
-  capitalizeFirstLetter(title: string | undefined) {
-    if (title === undefined) {
-      return '';
-    }
-    return title.charAt(0).toUpperCase() + title.slice(1);
+  createAScreening(movieId: bigint) {
+    this.selectedMovieAddScreening$.emit(movieId);
   }
 }

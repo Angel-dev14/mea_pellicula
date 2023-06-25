@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-6 mt-2" *ngFor="let movieProjection of movieProjections">
       <movie-card (selectedMovie$)="showUpcomingProjectionForSelectedMovie($event)"
-                  [movieProjection]="movieProjection"></movie-card>
+                  (selectedMovieAddScreening$)="createAScreening($event)"
+                  [movieProjection]="movieProjection"
+                  [showAddMovieScreeningButton]="showAddMovieScreening"></movie-card>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {UpcomingMovieProjection} from "../models/upcoming-movie-projection.model";
 import {ActivatedRoute, Router} from '@angular/router';
+import {HelperService} from "../services/helper.service";
 
 @Component({
   selector: 'upcoming-projection-card',
@@ -12,15 +13,9 @@ export class UpcomingProjectionCardComponent {
   @Input() upcomingMovieProjection: UpcomingMovieProjection | undefined;
 
   constructor(
+    public helperService: HelperService,
     private _router: Router,
-  ) {}
-
-  capitalizeFirstLetter(title: string | undefined) {
-    if (title === undefined) {
-      return '';
-    }
-    return title.charAt(0).toUpperCase() + title.slice(1);
-  }
+  ) { }
 
   navigateToMovieScreeningSeatSelection() {
     this._router.navigate(['movies/movie-screening-seats',
