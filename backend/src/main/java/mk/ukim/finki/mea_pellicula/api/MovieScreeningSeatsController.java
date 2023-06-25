@@ -1,6 +1,6 @@
 package mk.ukim.finki.mea_pellicula.api;
 
-import mk.ukim.finki.mea_pellicula.model.MovieScreeningSeats;
+import mk.ukim.finki.mea_pellicula.dto.MovieScreeningSeatsGroup;
 import mk.ukim.finki.mea_pellicula.service.MovieScreeningSeatsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +20,7 @@ public class MovieScreeningSeatsController {
     }
 
     @GetMapping("{movieScreeningId}")
-    List<MovieScreeningSeats> findAllForMovieScreeningId(
+    List<MovieScreeningSeatsGroup> findAllForMovieScreeningId(
             @PathVariable("movieScreeningId") Long movieScreeningId
     ) {
         return this.service.findAllMovieScreeningSeatsForMovieScreeningId(

@@ -1,1 +1,5 @@
-<p>seats works!</p>
+<seat *ngFor="let seat of seats"
+      [seat]="seat"
+      (seatSelection)="onSeatSelection($event)"
+>
+</seat>

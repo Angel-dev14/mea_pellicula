@@ -6,5 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface UpcomingProjectionsRepository extends JpaRepository<UpcomingProjectionsView, Long> {
+
+    UpcomingProjectionsView findByMovieScreeningId(Long movieScreeningId);
     List<UpcomingProjectionsView> findAllByMovieId(Long movieId);
 }

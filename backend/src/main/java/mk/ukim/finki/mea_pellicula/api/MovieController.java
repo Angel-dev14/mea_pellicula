@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/movies")
-public class    MovieController {
+public class MovieController {
 
     private final MovieService movieService;
 
@@ -20,12 +20,17 @@ public class    MovieController {
         this.movieService = movieService;
     }
 
+    @GetMapping("/upcoming-projection/{movieScreeningId}")
+    UpcomingProjectionsView getUpcomingProjection(@PathVariable Long movieScreeningId) {
+        return movieService.getUpcomingProjection(movieScreeningId);
+    }
+
     @GetMapping("/projections-next-month")
     List<MovieProjectionsView> getAllProjectionsForNextMonth() {
         return movieService.getAllMovieProjectionsForNextMonth();
     }
 
-    @GetMapping("/upcoming-projection/{movieId}")
+    @GetMapping("/upcoming-projections/{movieId}")
     List<UpcomingProjectionsView> getInfoForUpcomingProjection(@PathVariable Long movieId) {
         return movieService.getInfoAboutUpcomingProjectionsOfMovie(movieId);
     }

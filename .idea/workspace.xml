@@ -5,7 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/ReservationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/TicketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/dto/MovieScreeningSeatDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/dto/MovieScreeningSeatsGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/TicketInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/views/ReservationInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/ReservationInfoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/TicketInfoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/ReservationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/TicketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seat/seat.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seat/seat.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seat/seat.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/dialogs/reservation-confirmed/reservation-confirmed.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/dialogs/reservation-confirmed/reservation-confirmed.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/dialogs/reservation-confirmed/reservation-confirmed.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/movie-screening-seats.group.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/reservation-info.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/seat-selection.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/ticket-info.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/reservation.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/ticket.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/tickets/reservation-info.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/tickets/reservation-info.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/tickets/reservation-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieScreeningSeatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieScreeningSeatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreeningSeats.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreeningSeat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/views/UpcomingProjectionsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/views/UpcomingProjectionsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningSeatsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningSeatsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningSeatsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningSeatsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/movie-screening-seats.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/movie-screening-seats.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/seat.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/upcoming-movie-projection.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/upcoming-movie-projection.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/movie-screening-seats.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/movie-screening-seats.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/movie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/movie.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+    </list>
+    <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="">
       <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" afterDir="false" />
@@ -23,51 +76,8 @@
       <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieScreeningSeatsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreeningSeats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/Seat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningSeatsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningSeatsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/movie-screening-seats.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/cinema-room-seats/seats/seats.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/movie-screening-seats.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/models/seat.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/movie-screening-seats.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mea_pellicula.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieProjectionsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/views/MovieProjectionsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/UpcomingProjectionsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/views/UpcomingProjectionsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieProjectionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieProjectionsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/UpcomingProjectionsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/upcoming-movie-projection.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/upcoming-movie-projection.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/upcoming-projection-card/upcoming-projection-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/show_movie_projections_for_next_month_-_frontend_configure_gradle_wrapper_for_module_backe.patch" afterDir="false" />
     </list>
-    <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +95,15 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -98,11 +117,16 @@
   </component>
   <component name="ProjectId" id="2RCopW5xAg9PqixnE6E5irailio" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/angel/fakultet/napredi bazi na podatoci/mea_pellicula&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -110,9 +134,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;362fd68aa715f98d586c59d5ad2e8928&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\angel\\fakultet\\napredi bazi na podatoci\\mea_pellicula\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -120,6 +145,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\angel\fakultet\napredi bazi na podatoci\mea_pellicula" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\angel\fakultet\napredi bazi na podatoci\mea_pellicula\frontend\src\app" />
     </key>
   </component>
   <component name="RunManager" selected="Remote JVM Debug.JvmDebug">
@@ -184,6 +212,10 @@
       <workItem from="1687096769249" duration="927000" />
       <workItem from="1687097714961" duration="236000" />
       <workItem from="1687097960382" duration="133000" />
+      <workItem from="1687194349989" duration="18929000" />
+      <workItem from="1687283772011" duration="9023000" />
+      <workItem from="1687364964313" duration="8391000" />
+      <workItem from="1687689938516" duration="2674000" />
     </task>
     <task id="LOCAL-00001" summary="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save">
       <created>1687110105418</created>
@@ -192,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687110105418</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save">
+      <created>1687110448953</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687110448953</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,5 +251,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save" />
     <option name="LAST_COMMIT_MESSAGE" value="show movie projections for next month - frontend&#10;configure gradle wrapper for module backend&#10;enable front end reload on save" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/ReservationService.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/ReservationService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

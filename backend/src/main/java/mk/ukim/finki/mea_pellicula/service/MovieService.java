@@ -7,6 +7,7 @@ import mk.ukim.finki.mea_pellicula.repo.UpcomingProjectionsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class MovieService {
@@ -17,6 +18,10 @@ public class MovieService {
                         UpcomingProjectionsRepository upcomingProjectionsRepository) {
         this.movieProjectionsRepository = movieProjectionsRepository;
         this.upcomingProjectionsRepository = upcomingProjectionsRepository;
+    }
+
+    public UpcomingProjectionsView getUpcomingProjection(Long movieScreeningId) {
+        return this.upcomingProjectionsRepository.findByMovieScreeningId(movieScreeningId);
     }
 
     public List<MovieProjectionsView> getAllMovieProjectionsForNextMonth() {

@@ -1,0 +1,10 @@
+<div
+  class="seat"
+  [class.booked]="!seat?.free"
+  [class.selected]="selected"
+  (click)="toggleSeatSelection()"
+>
+      <span class="seat-number">
+        {{seat?.seatNumber}}
+      </span>
+</div>

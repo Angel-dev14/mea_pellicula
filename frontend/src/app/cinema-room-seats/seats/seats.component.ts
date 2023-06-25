@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {MovieScreeningSeat} from '../../models/movie-screening-seats.model';
+import {SeatSelection} from '../../models/seat-selection.model';
 
 @Component({
   selector: 'seats',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class SeatsComponent {
 
+  @Input() seats: MovieScreeningSeat[] = [];
+  @Output() seatSelection = new EventEmitter<SeatSelection>();
+
+  onSeatSelection(event: SeatSelection) {
+    this.seatSelection.emit(event);
+  }
 }

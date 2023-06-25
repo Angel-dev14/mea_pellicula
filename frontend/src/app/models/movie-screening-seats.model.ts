@@ -1,7 +1,8 @@
-import {Seat} from './seat.model';
 
-export interface MovieScreeningSeats {
+export interface MovieScreeningSeat {
   id: number;
   free: boolean;
-  seat: Seat;
+  seatNumber: number;
+  rowNumber: number;
+  factor: number;
 }

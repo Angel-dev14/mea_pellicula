@@ -1,1 +1,53 @@
-<span>TODO</span>
+<div class="mt-3 row">
+  <div class="col-8">
+    <div class="cinema-room shadow">
+      <div class="screen">
+      </div>
+      <mat-spinner
+        class="spinner"
+        *ngIf="loader$ | async"
+      >
+      </mat-spinner>
+      <div
+        class="cinema-row"
+        *ngFor="let row of movieScreeningSeats">
+        <seats
+          [seats]="row.seats"
+          (seatSelection)="onSeatSelection($event)"
+        >
+        </seats>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="movieProjection" class="card col-4 text-center reservation-info">
+    <h2>Reservation Info</h2>
+    <div class="card-body" >
+      <h5 class="card-title">{{movieProjection.title}}</h5>
+      <p class="card-text">{{movieProjection.startDate | date:"dd.MM.YYYY HH:mm"}}</p>
+      <p class="card-subtitle card-text">Selected seats:</p>
+      <div *ngIf="selectedSeats.length !== 0" class="mt-2 selected-seats shadow p-1 text-center">
+        <mat-chip-listbox
+        >
+          <mat-chip
+            *ngFor="let selectedSeat of selectedSeats"
+          >
+            {{selectedSeat.rowNumber}} - {{selectedSeat.seatNumber}}
+          </mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </div>
+    <div>
+      <h3 class="mt-4 card-text">
+        {{totalPrice | number: "0.0"}} den
+      </h3>
+    </div>
+    <button
+      class="m-3"
+      color="warn"
+      mat-raised-button
+      (click)="createReservation()"
+    >
+      Reserve
+    </button>
+  </div>
+</div>

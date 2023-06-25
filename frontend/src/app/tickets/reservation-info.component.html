@@ -1,0 +1,34 @@
+<div class="card shadow-lg reservation-card mt-3">
+  <div class="card-body">
+    <h2 class="card-title text-danger">Reservation Info</h2>
+    <div *ngIf="reservationInfo">
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong class="text-secondary">Cinema:</strong> {{reservationInfo.cinema}}</p>
+          <p><strong class="text-secondary">Cinema Room:</strong> {{reservationInfo.cinemaRoom}}</p>
+          <p><strong class="text-secondary">City:</strong> {{reservationInfo.city}}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong class="text-secondary">Customer:</strong> {{reservationInfo.customerFullName}}</p>
+          <p><strong class="text-secondary">Movie:</strong> {{reservationInfo.movieTitle}}</p>
+          <p><strong class="text-secondary">Paid Price:</strong> {{reservationInfo.paidPrice}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="card-title text-primary">Ticket Info</h2>
+<div
+  *ngFor="let ticketInfo of ticketInfos"
+  class="mt-2 card shadow-lg ticket-card">
+  <div class="card-body">
+    <div *ngIf="ticketInfo">
+      <p><strong class="text-secondary">ID:</strong> {{ticketInfo.id}}</p>
+      <p><strong class="text-secondary">Reservation ID:</strong> {{ticketInfo.reservationId}}</p>
+      <p><strong class="text-secondary">Paid Price:</strong> {{ticketInfo.paidPrice}}</p>
+      <p><strong class="text-secondary">Row Number:</strong> {{ticketInfo.rowNumber}}</p>
+      <p><strong class="text-secondary">Seat Number:</strong> {{ticketInfo.seatNumber}}</p>
+    </div>
+  </div>
+</div>
+

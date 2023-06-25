@@ -11,6 +11,14 @@ import { UpcomingProjectionCardComponent } from './upcoming-projection-card/upco
 import { MovieScreeningSeatsComponent } from './cinema-room-seats/movie-screening-seats.component';
 import { SeatsComponent } from './cinema-room-seats/seats/seats.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SeatComponent } from './cinema-room-seats/seats/seat/seat.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatChipsModule} from '@angular/material/chips';
+import { ReservationConfirmedComponent } from './dialogs/reservation-confirmed/reservation-confirmed.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import { ReservationInfoComponent } from './tickets/reservation-info.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +28,21 @@ import {MatButtonModule} from '@angular/material/button';
     UpcomingProjectionsInfoComponent,
     UpcomingProjectionCardComponent,
     MovieScreeningSeatsComponent,
-    SeatsComponent
+    SeatsComponent,
+    SeatComponent,
+    ReservationConfirmedComponent,
+    ReservationInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
