@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="mea_peliculla@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.31">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1">
       <DateStyle>dmy</DateStyle>
       <Grants>1||-9223372036854775808|c|G
@@ -810,25 +810,6 @@ false Zulu
 13388||10|U|G</Grants>
       <IntrospectionStateNumber>31537</IntrospectionStateNumber>
       <ObjectId>18211</ObjectId>
-      <Relations>sequence|table|18215|18212|1
-sequence|table|18219|18216|1
-sequence|table|18228|18223|1
-sequence|table|18232|18229|1
-sequence|table|18238|18233|1
-sequence|table|18259|18254|1
-sequence|table|18263|18260|1
-sequence|table|18269|18264|1
-sequence|table|18273|18270|1
-sequence|table|18277|18274|1
-sequence|table|18281|18278|1
-sequence|table|18287|18282|1
-sequence|table|18291|18288|1
-sequence|table|18297|18292|1
-sequence|table|18301|18298|1
-sequence|table|18305|18302|1
-sequence|table|18327|18324|1
-sequence|table|18698|18699|1
-</Relations>
       <OwnerName>postgres</OwnerName>
     </database>
     <database id="3" parent="1" name="postgres">

@@ -17,9 +17,12 @@ public class ReservationController {
         this.reservationService = reservationService;
     }
 
-    @PostMapping("/create")
-    public Long createReservation(@RequestBody List<Long> movieScreeningSeatIds) throws SQLException {
-        return reservationService.createReservation(movieScreeningSeatIds);
+    @PostMapping("/create/{userId}")
+    public Long createReservation(
+            @RequestBody List<Long> movieScreeningSeatIds,
+            @PathVariable Long userId
+    ) throws SQLException {
+        return reservationService.createReservation(movieScreeningSeatIds, userId);
     }
 
     @GetMapping("/{reservationId}")

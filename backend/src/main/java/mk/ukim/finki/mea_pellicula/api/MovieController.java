@@ -2,7 +2,6 @@ package mk.ukim.finki.mea_pellicula.api;
 
 import mk.ukim.finki.mea_pellicula.model.AverageRatingView;
 import mk.ukim.finki.mea_pellicula.model.Movie;
-import mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;
 import mk.ukim.finki.mea_pellicula.model.views.UpcomingProjectionsView;
 import mk.ukim.finki.mea_pellicula.service.MovieScreeningService;
 import mk.ukim.finki.mea_pellicula.service.MovieService;

@@ -14,8 +14,8 @@ export class ReservationService {
 
   }
 
-  createReservation(movieScreeningSeatIds: number[]): Observable<number> {
-    return this._http.post<number>(`${this._path}/create`, movieScreeningSeatIds)
+  createReservation(movieScreeningSeatIds: number[], userId: number): Observable<number> {
+    return this._http.post<number>(`${this._path}/create/${userId}`, movieScreeningSeatIds)
   }
 
   findReservationInfo(reservationId: number): Observable<ReservationInfo> {

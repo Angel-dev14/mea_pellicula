@@ -11,6 +11,8 @@ import {UpcomingMovieProjection} from '../models/upcoming-movie-projection.model
 import {ReservationService} from '../services/reservation.service';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {ReservationConfirmedComponent} from '../dialogs/reservation-confirmed/reservation-confirmed.component';
+import {AuthService} from '../services/auth.service';
+import {User} from '../models/user.model';
 
 @Component({
   selector: 'cinema-room-seats',
@@ -31,6 +33,8 @@ export class MovieScreeningSeatsComponent implements OnInit {
 
   selectedSeats: SeatSelection[] = [];
 
+  userId: number | undefined;
+
   constructor(
     private _movieScreeningSeatService: MovieScreeningSeatsService,
     private _route: ActivatedRoute,
@@ -39,10 +43,18 @@ export class MovieScreeningSeatsComponent implements OnInit {
     private _reservationService: ReservationService,
     private _matDialog: MatDialog,
     private _router: Router,
+    private _authService: AuthService,
   ) {
   }
 
   ngOnInit(): void {
+
+    if (localStorage.getItem('currentUser')) {
+      console.log(JSON.parse(localStorage.getItem('currentUser')!!) as User,'test');
+      this.userId = (JSON.parse(localStorage.getItem('currentUser')!!) as User).id;
+      console.log('USER', this.userId)
+    }
+
     this._route.paramMap.pipe(
       filter((paramMap) => paramMap.has('movieScreeningId')),
       map((paramMap) => +paramMap.get('movieScreeningId')!),
@@ -91,7 +103,7 @@ export class MovieScreeningSeatsComponent implements OnInit {
   }
 
   createReservation() {
-    this._reservationService.createReservation(this.selectedSeatIds)
+    this._reservationService.createReservation(this.selectedSeatIds, this.userId!)
       .subscribe({
         next: (reservationId) => {
           console.log('reservationId', reservationId);

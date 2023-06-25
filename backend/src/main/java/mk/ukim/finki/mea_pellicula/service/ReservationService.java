@@ -26,9 +26,8 @@ public class ReservationService {
         this.reservationInfoRepository = reservationInfoRepository;
     }
 
-    public Long createReservation(List<Long> movieScreeningSeats) throws SQLException {
-//        callStoredProcedure(1L, movieScreeningSeats.toArray(new Long[0]));
-      return callStoredFunction(1L, movieScreeningSeats.toArray(new Long[0]));
+    public Long createReservation(List<Long> movieScreeningSeats, Long userId) throws SQLException {
+      return callStoredFunction(userId, movieScreeningSeats.toArray(new Long[0]));
     }
 
     public ReservationInfo findReservationInfo(Long reservationId) {
@@ -47,25 +46,4 @@ public class ReservationService {
         });
         return result;
     }
-
-    public void callStoredProcedure(long customerId, Long[] movieScreeningSeatIds) {
-        String procedureCall = "CALL create_reservation(?, ?)";
-        Object[] objects = new Object[]{customerId, movieScreeningSeatIds};
-        int[] types = new int[]{Types.BIGINT, Types.ARRAY};
-        jdbcTemplate.update(
-                procedureCall,
-                objects,
-                types
-        );
-    }
-
-    public void call(long customerId, List<Long> movieScreeningSeatIds) {
-        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("create_reservation");
-        SqlParameterSource inParams = new MapSqlParameterSource()
-                .addValue("customer_id", customerId, Types.BIGINT)
-                .addValue("movie_screening_seat_ids", movieScreeningSeatIds, Types.ARRAY);
-        jdbcCall.execute(inParams);
-    }
-
-
 }
