@@ -19,6 +19,7 @@ export class LoginComponent {
     });
 
     localStorage.clear();
+    authService.isLoggedIn = false;
   }
 
   onSubmit() {
@@ -29,6 +30,7 @@ export class LoginComponent {
         } else {
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.authService.userEmitChange(user);
+          this.authService.isLoggedIn = true;
           this.router.navigate(['movies/next-month-projections']);
         }
       },

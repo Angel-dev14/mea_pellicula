@@ -14,6 +14,8 @@ export class AuthService {
 
   public userEmitter = this.user.asObservable();
 
+  public isLoggedIn = false;
+
   userEmitChange(usr: User) {
     this.user.next(usr);
   }
