@@ -8,13 +8,16 @@
     </div>
     <div class="input_field">
       <label for="basePrice" class="form-label">Base price</label>
-      <input type="number" id="basePrice" name="basePrice" class="form-control" formControlName="basePrice">
+      <input type="number" id="basePrice" name="basePrice" class="form-control" formControlName="basePrice" min="1" required>
     </div>
     <div class="input_field">
       <label for="cinemaRoomId" class="form-label">Cinema Room Number</label>
       <input type="number" min="1" class="form-control" id="cinemaRoomId" name="cinemaRoomId"
              formControlName="cinemaRoomId" required>
     </div>
+
+    <div class="mt-3 text-danger" *ngIf="showErrorMessage">{{ errorMessage }}</div>
+
     <div class="input_field">
       <button type="submit" class="btn btn-info me-3">Save</button>
       <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>

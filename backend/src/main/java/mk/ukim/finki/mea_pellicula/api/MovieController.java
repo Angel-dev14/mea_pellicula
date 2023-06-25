@@ -57,6 +57,6 @@ public class MovieController {
                                                     @RequestParam(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
                                                     @RequestParam(name = "basePrice") Long basePrice,
                                                     @RequestParam(name = "cinemaRoomId") Long cinemaRoomId) {
-        return Map.of("Message", this.movieScreeningService.addMovieScreening(startDate, basePrice, movieId, cinemaRoomId));
+        return Map.of("message", this.movieScreeningService.addMovieScreening(startDate, basePrice, movieId, cinemaRoomId));
     }
 }

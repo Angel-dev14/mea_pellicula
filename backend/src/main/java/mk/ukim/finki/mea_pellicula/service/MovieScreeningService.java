@@ -14,12 +14,12 @@ public class MovieScreeningService {
     }
 
     public String addMovieScreening(LocalDateTime startDate, double basePrice, Long movieId, Long cinemaRoomId) {
-        String procedureCall = "SELECT create_movie_screening(?, ?, ?, ?)";
+        String procedureCall = "CALL create_movie_screening(?, ?, ?, ?)";
         try {
             jdbcTemplate.update(procedureCall, startDate, basePrice, movieId, cinemaRoomId);
-            return "Adding successfull";
+            return "Success";
         } catch (Exception e) {
-            return e.getMessage();
+            return "Movie screening can not be added succesffuly";
         }
     }
 }
