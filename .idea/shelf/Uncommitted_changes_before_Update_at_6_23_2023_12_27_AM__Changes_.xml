@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_6_23_2023_12_27_AM_[Changes]" date="1687473016344" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2023_12_27_AM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/23/2023 12:27 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.6.1/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.6.1/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2023_12_27_AM_[Changes]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.6.1/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.6.1/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2023_12_27_AM_[Changes]/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2023_12_27_AM_[Changes]/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.6.1/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.6.1/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_23_2023_12_27_AM_[Changes]/executionHistory.bin" />
+  </binary>
+</changelist>

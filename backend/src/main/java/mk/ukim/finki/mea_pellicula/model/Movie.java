@@ -3,6 +3,7 @@ package mk.ukim.finki.mea_pellicula.model;
 import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,7 @@ public class Movie {
     String description;
 
     @Column(name = "date_released")
-    Date dateReleased;
+    LocalDate dateReleased;
 
     @Nullable
     @Column(name = "imdb_link")
@@ -36,7 +37,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, @Nullable String description, Date dateReleased, @Nullable String imdbLink,
+    public Movie(String title, @Nullable String description, LocalDate dateReleased, @Nullable String imdbLink,
                  Integer duration, Boolean is3d) {
         this.title = title;
         this.description = description;
@@ -58,7 +59,7 @@ public class Movie {
         return description;
     }
 
-    public Date getDateReleased() {
+    public LocalDate getDateReleased() {
         return dateReleased;
     }
 
@@ -82,7 +83,7 @@ public class Movie {
         this.description = description;
     }
 
-    public void setDateReleased(Date dateReleased) {
+    public void setDateReleased(LocalDate dateReleased) {
         this.dateReleased = dateReleased;
     }
 

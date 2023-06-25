@@ -13,6 +13,7 @@ export class AuthService {
   private user = new Subject<User>();
 
   public userEmitter = this.user.asObservable();
+
   userEmitChange(usr: User) {
     this.user.next(usr);
   }

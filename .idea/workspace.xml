@@ -4,30 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment=".">
+    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/add-new-movie/add-new-movie.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/add-new-movie/add-new-movie.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/list-next-month-projections/list-next-month-projections.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/list-next-month-projections/list-next-month-projections.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav-bar/nav-bar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav-bar/nav-bar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav-bar/nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav-bar/nav-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav-bar/nav-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav-bar/nav-bar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.ts" afterDir="false" />
     </list>
     <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="no commit">
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/config/DatabaseConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/mk/ukim/finki/mea_pellicula/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/mk/ukim/finki/mea_pellicula/BackendApplicationTests.java" afterDir="false" />
     </list>
@@ -48,6 +40,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$/backend/gradle">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
           <activation />
         </task>
         <projects_view>
@@ -94,12 +89,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="openjdk-18" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Praksa-Sorsix/back-end/final-final-project" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Praksa-Sorsix/back-end/final-final-project/blogit-frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -172,6 +170,13 @@
       </RunnerSettings>
       <method v="2" />
     </configuration>
+    <configuration name="BackendApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mea_pellicula.backend.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.mea_pellicula.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mk.ukim.finki.mea_pellicula.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="mk.ukim.finki.mea_pellicula.BackendApplication" />
@@ -183,9 +188,14 @@
       <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
       <item itemvalue="Remote JVM Debug.Local Debug JVM" />
       <item itemvalue="Spring Boot.BackendApplication" />
+      <item itemvalue="Spring Boot.BackendApplication (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
+        <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
+        <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
+        <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
         <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
         <item itemvalue="Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" />
       </list>
@@ -223,6 +233,9 @@
       <workItem from="1687268582540" duration="19262000" />
       <workItem from="1687362759589" duration="1852000" />
       <workItem from="1687268582540" duration="2842000" />
+      <workItem from="1687372010408" duration="506000" />
+      <workItem from="1687465065081" duration="2665000" />
+      <workItem from="1687685820414" duration="4531000" />
     </task>
     <task id="LOCAL-00001" summary="show movie projections for next month - frontend">
       <created>1687029954589</created>
@@ -238,14 +251,56 @@
       <option name="project" value="LOCAL" />
       <updated>1687205186970</updated>
     </task>
-    <task id="LOCAL-00003" summary="implement add new movie backend/frontend">
-      <created>1687278443025</created>
+    <task id="LOCAL-00003" summary=".">
+      <created>1687370635401</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1687278443025</updated>
+      <updated>1687370635401</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="resolve merge conflicts">
+      <created>1687474668280</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687474668280</updated>
+    </task>
+    <task id="LOCAL-00005" summary=".">
+      <created>1687474696076</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687474696076</updated>
+    </task>
+    <task id="LOCAL-00006" summary=".">
+      <created>1687474756267</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687474756267</updated>
+    </task>
+    <task id="LOCAL-00007" summary="implement permissions :')">
+      <created>1687686810667</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687686810667</updated>
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <created>1687689188083</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687689188083</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix">
+      <created>1687690165896</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687690165896</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,15 +320,30 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="show movie projections for next month - frontend" />
     <MESSAGE value="implement simple navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement simple navbar" />
+    <MESSAGE value="improvements" />
+    <MESSAGE value="resolve merge conflicts" />
+    <MESSAGE value="implement permissions :')" />
+    <MESSAGE value="." />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

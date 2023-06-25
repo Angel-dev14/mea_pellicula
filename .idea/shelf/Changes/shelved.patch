@@ -1,0 +1,611 @@
+Index: backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.mea_pellicula.repo;\r\nimport mk.ukim.finki.mea_pellicula.model.MovieScreening;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\n\r\npublic interface MovieScreeningRepository extends JpaRepository<MovieScreening, Long> {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningRepository.java b/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningRepository.java
+--- a/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningRepository.java	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningRepository.java	(date 1687370805084)
+@@ -1,6 +1,6 @@
+-package mk.ukim.finki.mea_pellicula.repo;
+-import mk.ukim.finki.mea_pellicula.model.MovieScreening;
+-import org.springframework.data.jpa.repository.JpaRepository;
+-
+-public interface MovieScreeningRepository extends JpaRepository<MovieScreening, Long> {
+-}
++//package mk.ukim.finki.mea_pellicula.repo;
++//import mk.ukim.finki.mea_pellicula.model.MovieScreening;
++//import org.springframework.data.jpa.repository.JpaRepository;
++//
++//public interface MovieScreeningRepository extends JpaRepository<MovieScreening, Long> {
++//}
+Index: backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreening.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.mea_pellicula.model;\r\n\r\nimport io.micrometer.common.lang.Nullable;\r\nimport jakarta.persistence.*;\r\n\r\nimport java.security.Timestamp;\r\nimport java.time.LocalDateTime;\r\nimport java.util.Date;\r\n\r\n@Entity\r\n@Table(name = \"movie_screenings\")\r\npublic class MovieScreening {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    Long id;\r\n\r\n    @Column(name = \"start_date\")\r\n    LocalDateTime startDate;\r\n\r\n    @Column(name = \"base_price\")\r\n    double basePrice;\r\n\r\n    @Column(name = \"movie_id\")\r\n    Long movieId;\r\n\r\n    @Column(name = \"cinema_room_id\")\r\n    Long cinemaRoomId;\r\n\r\n    public MovieScreening(){}\r\n    public MovieScreening(LocalDateTime startDate, double basePrice, Long movieId, Long cinemaRoomId)\r\n    {\r\n        this.startDate=startDate;\r\n        this.basePrice=basePrice;\r\n        this.movieId=movieId;\r\n        this.cinemaRoomId=cinemaRoomId;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreening.java b/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreening.java
+--- a/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreening.java	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreening.java	(date 1687370805088)
+@@ -1,37 +1,35 @@
+-package mk.ukim.finki.mea_pellicula.model;
+-
+-import io.micrometer.common.lang.Nullable;
+-import jakarta.persistence.*;
+-
+-import java.security.Timestamp;
+-import java.time.LocalDateTime;
+-import java.util.Date;
+-
+-@Entity
+-@Table(name = "movie_screenings")
+-public class MovieScreening {
+-    @Id
+-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+-    Long id;
+-
+-    @Column(name = "start_date")
+-    LocalDateTime startDate;
+-
+-    @Column(name = "base_price")
+-    double basePrice;
+-
+-    @Column(name = "movie_id")
+-    Long movieId;
+-
+-    @Column(name = "cinema_room_id")
+-    Long cinemaRoomId;
+-
+-    public MovieScreening(){}
+-    public MovieScreening(LocalDateTime startDate, double basePrice, Long movieId, Long cinemaRoomId)
+-    {
+-        this.startDate=startDate;
+-        this.basePrice=basePrice;
+-        this.movieId=movieId;
+-        this.cinemaRoomId=cinemaRoomId;
+-    }
+-}
++//package mk.ukim.finki.mea_pellicula.model;
++//
++//import jakarta.persistence.*;
++//
++//import java.time.LocalDateTime;
++//
++//@Entity
++//@Table(name = "movie_screenings")
++//public class MovieScreening {
++//    @Id
++//    @GeneratedValue(strategy = GenerationType.IDENTITY)
++//    Long id;
++//
++//    @Column(name = "start_date")
++//    LocalDateTime startDate;
++//
++//    @Column(name = "base_price")
++//    double basePrice;
++//
++//    @Column(name = "movie_id")
++//    Long movieId;
++//
++//    @Column(name = "cinema_room_id")
++//    Long cinemaRoomId;
++//
++//    public MovieScreening() {
++//    }
++//
++//    public MovieScreening(LocalDateTime startDate, double basePrice, Long movieId, Long cinemaRoomId) {
++//        this.startDate = startDate;
++//        this.basePrice = basePrice;
++//        this.movieId = movieId;
++//        this.cinemaRoomId = cinemaRoomId;
++//    }
++//}
+Index: backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.mea_pellicula.api;\r\n\r\nimport mk.ukim.finki.mea_pellicula.model.Movie;\r\nimport mk.ukim.finki.mea_pellicula.model.MovieProjectionsView;\r\nimport mk.ukim.finki.mea_pellicula.model.UpcomingProjectionsView;\r\nimport mk.ukim.finki.mea_pellicula.service.MovieScreeningService;\r\nimport mk.ukim.finki.mea_pellicula.service.MovieService;\r\nimport org.springframework.format.annotation.DateTimeFormat;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.sql.Timestamp;\r\nimport java.time.LocalDateTime;\r\nimport java.time.Month;\r\nimport java.time.format.DateTimeFormatter;\r\nimport java.util.Date;\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping(\"/api/movies\")\r\npublic class MovieController {\r\n\r\n    private final MovieService movieService;\r\n    private final MovieScreeningService movieScreeningService;\r\n\r\n    public MovieController(MovieService movieService, MovieScreeningService movieScreeningService) {\r\n        this.movieService = movieService;\r\n        this.movieScreeningService=movieScreeningService;\r\n    }\r\n\r\n    @GetMapping(\"/projections-next-month\")\r\n    List<MovieProjectionsView> getAllProjectionsForNextMonth() {\r\n        return movieService.getAllMovieProjectionsForNextMonth();\r\n    }\r\n\r\n    @GetMapping(\"/upcoming-projection/{movieId}\")\r\n    List<UpcomingProjectionsView> getInfoForUpcomingProjection(@PathVariable Long movieId) {\r\n        return movieService.getInfoAboutUpcomingProjectionsOfMovie(movieId);\r\n    }\r\n\r\n    @PostMapping(\"/add-movie\")\r\n    Movie addMovie(@RequestParam(name = \"title\") String title,\r\n                   @RequestParam(name = \"description\", required = false) String description,\r\n                   @RequestParam(name = \"dateReleased\") Date dateTime,\r\n                   @RequestParam(name = \"imdbLink\", required = false) String imdbLink,\r\n                   @RequestParam(name = \"duration\") Integer duration,\r\n                   @RequestParam(name = \"is3d\") Boolean is3d) {\r\n        return movieService.saveOrUpdateMovie(title, description, dateTime, imdbLink, duration, is3d);\r\n    }\r\n    @PostMapping(\"/add-movie-screening\")\r\n    String addMovieScreeningProjection(@RequestParam(name=\"movieId\") Long movieId,\r\n                                       @RequestParam(name=\"startDate\")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,\r\n                                       @RequestParam(name=\"basePrice\") Long basePrice,\r\n                                       @RequestParam(name=\"cinemaRoomId\") Long cinemaRoomId)\r\n    {\r\n\r\n        /*LocalDateTime startDate = LocalDateTime.of(3022, Month.JULY, 29, 19, 30, 40);\r\n        double basePrice=5.5;\r\n        Long cinemaRoomId= Long.parseLong(\"4\");*/\r\n        return this.movieScreeningService.addMovieScreening(startDate,basePrice,movieId, cinemaRoomId);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java b/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java
+--- a/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java	(date 1687370690134)
+@@ -8,10 +8,7 @@
+ import org.springframework.format.annotation.DateTimeFormat;
+ import org.springframework.web.bind.annotation.*;
+ 
+-import java.sql.Timestamp;
+ import java.time.LocalDateTime;
+-import java.time.Month;
+-import java.time.format.DateTimeFormatter;
+ import java.util.Date;
+ import java.util.List;
+ 
+@@ -24,7 +21,7 @@
+ 
+     public MovieController(MovieService movieService, MovieScreeningService movieScreeningService) {
+         this.movieService = movieService;
+-        this.movieScreeningService=movieScreeningService;
++        this.movieScreeningService = movieScreeningService;
+     }
+ 
+     @GetMapping("/projections-next-month")
+@@ -46,16 +43,12 @@
+                    @RequestParam(name = "is3d") Boolean is3d) {
+         return movieService.saveOrUpdateMovie(title, description, dateTime, imdbLink, duration, is3d);
+     }
++
+     @PostMapping("/add-movie-screening")
+-    String addMovieScreeningProjection(@RequestParam(name="movieId") Long movieId,
+-                                       @RequestParam(name="startDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
+-                                       @RequestParam(name="basePrice") Long basePrice,
+-                                       @RequestParam(name="cinemaRoomId") Long cinemaRoomId)
+-    {
+-
+-        /*LocalDateTime startDate = LocalDateTime.of(3022, Month.JULY, 29, 19, 30, 40);
+-        double basePrice=5.5;
+-        Long cinemaRoomId= Long.parseLong("4");*/
+-        return this.movieScreeningService.addMovieScreening(startDate,basePrice,movieId, cinemaRoomId);
++    String addMovieScreeningProjection(@RequestParam(name = "movieId") Long movieId,
++                                       @RequestParam(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
++                                       @RequestParam(name = "basePrice") Long basePrice,
++                                       @RequestParam(name = "cinemaRoomId") Long cinemaRoomId) {
++        return this.movieScreeningService.addMovieScreening(startDate, basePrice, movieId, cinemaRoomId);
+     }
+ }
+Index: frontend/src/app/services/movie.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {HttpClient} from '@angular/common/http';\r\nimport {Injectable} from '@angular/core';\r\nimport {Observable} from 'rxjs';\r\nimport {MovieProjection} from \"../models/movie-projection.model\";\r\nimport {UpcomingMovieProjection} from \"../models/upcoming-movie-projection.model\";\r\nimport {Movie} from \"../models/movie.model\";\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class MovieService {\r\n  path = 'api/movies';\r\n\r\n  constructor(private http: HttpClient) {\r\n  }\r\n\r\n  getMovieProjectionsForNextMonth(): Observable<MovieProjection[]> {\r\n    return this.http.get<MovieProjection[]>(`${this.path}/projections-next-month`);\r\n  }\r\n\r\n  getInfoForUpcomingProjections(movieId: number): Observable<UpcomingMovieProjection[]> {\r\n    return this.http.get<UpcomingMovieProjection[]>(`${this.path}/upcoming-projection/${movieId}`);\r\n  }\r\n\r\n  addNewMovie(movie: Movie): Observable<any> {\r\n    const formData: FormData = new FormData();\r\n    formData.append('title', movie.title);\r\n    movie?.description ? formData.append('description', movie.description) : '';\r\n    formData.append('dateReleased', movie.dateReleased.toString());\r\n    movie?.imdbLink ? formData.append('imdbLink', movie.imdbLink) : '';\r\n    formData.append('duration', movie.duration.toString());\r\n    formData.append('is3d', movie.is3d.toString());\r\n    return this.http.post<any>(`${this.path}/add-movie`, formData);\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/app/services/movie.service.ts b/frontend/src/app/services/movie.service.ts
+--- a/frontend/src/app/services/movie.service.ts	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/frontend/src/app/services/movie.service.ts	(date 1687371015022)
+@@ -4,6 +4,7 @@
+ import {MovieProjection} from "../models/movie-projection.model";
+ import {UpcomingMovieProjection} from "../models/upcoming-movie-projection.model";
+ import {Movie} from "../models/movie.model";
++import {MovieScreening} from "../models/movie-screening.model";
+ 
+ @Injectable({
+   providedIn: 'root'
+@@ -32,4 +33,16 @@
+     formData.append('is3d', movie.is3d.toString());
+     return this.http.post<any>(`${this.path}/add-movie`, formData);
+   }
++  createMovieScreening(movieScreening: MovieScreening)//:Observable<any>
++  {
++    console.log("called");
++    const formData: FormData = new FormData();
++    formData.append('startDate', movieScreening.startDate.toString());
++    formData.append("basePrice", movieScreening.basePrice.toString());
++    formData.append("movieId", movieScreening.movieId.toString());
++    console.log(movieScreening.movieId.toString());
++    formData.append("cinemaRoomId", movieScreening.cinemaRoomId.toString());
++    return this.http.post<any>(`${this.path}/add-movie-screening`, formData);
++  }
++
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f0b252a0-13a6-48aa-994e-69a2b3eddbbd\" name=\"Changes\" comment=\"implement simple navbar\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"d12acbd8-9a46-4938-ad02-968b61e9c5a6\" name=\"no commit\" comment=\"no commit\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$/backend\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <task path=\"$PROJECT_DIR$/backend/gradle\">\r\n          <activation />\r\n        </task>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand />\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2RCopW5xAg9PqixnE6E5irailio\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"autoscrollFromSource\" value=\"true\" />\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"jdk.selected.JAVA_MODULE\" value=\"openjdk-18\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/backend\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"terminal\" />\r\n    <property name=\"ts.external.directory.path\" value=\"D:\\FINKI\\Semestar8\\NBP\\proekt\\app\\mea_pellicula\\frontend\\node_modules\\typescript\\lib\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\FINKI\\Semestar8\\NBP\\proekt\\app\\mea_pellicula\\backend\" />\r\n      <recent name=\"D:\\FINKI\\Semestar8\\NBP\\proekt\\app\\mea_pellicula\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\FINKI\\Semestar8\\NBP\\proekt\\app\\mea_pellicula\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Remote JVM Debug.Local Debug JVM\">\r\n    <configuration name=\"D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\r\n      <ExternalSystemSettings>\r\n        <option name=\"executionName\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\r\n        <option name=\"scriptParameters\" value=\"--refresh-dependencies\" />\r\n        <option name=\"taskDescriptions\">\r\n          <list />\r\n        </option>\r\n        <option name=\"taskNames\">\r\n          <list>\r\n            <option value=\"clean\" />\r\n            <option value=\"build\" />\r\n          </list>\r\n        </option>\r\n        <option name=\"vmOptions\" />\r\n      </ExternalSystemSettings>\r\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\r\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\r\n      <DebugAllEnabled>false</DebugAllEnabled>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Local Debug JVM\" type=\"Remote\">\r\n      <module name=\"mea_pellicula\" />\r\n      <option name=\"USE_SOCKET_TRANSPORT\" value=\"true\" />\r\n      <option name=\"SERVER_MODE\" value=\"false\" />\r\n      <option name=\"SHMEM_ADDRESS\" />\r\n      <option name=\"HOST\" value=\"localhost\" />\r\n      <option name=\"PORT\" value=\"5005\" />\r\n      <option name=\"AUTO_RESTART\" value=\"false\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"5005\" />\r\n        <option name=\"LOCAL\" value=\"false\" />\r\n      </RunnerSettings>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"BackendApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\">\r\n      <module name=\"mk.ukim.finki.mea_pellicula.main\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"mk.ukim.finki.mea_pellicula.BackendApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]\" />\r\n      <item itemvalue=\"Remote JVM Debug.Local Debug JVM\" />\r\n      <item itemvalue=\"Spring Boot.BackendApplication\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]\" />\r\n        <item itemvalue=\"Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]\" />\r\n        <item itemvalue=\"Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]\" />\r\n        <item itemvalue=\"Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]\" />\r\n        <item itemvalue=\"Gradle.D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f0b252a0-13a6-48aa-994e-69a2b3eddbbd\" name=\"Changes\" comment=\"\" />\r\n      <changelist id=\"d12acbd8-9a46-4938-ad02-968b61e9c5a6\" name=\"no commit\" comment=\"\" />\r\n      <created>1686763607983</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1686763607983</updated>\r\n      <workItem from=\"1686763609263\" duration=\"127000\" />\r\n      <workItem from=\"1686992699505\" duration=\"961000\" />\r\n      <workItem from=\"1687028830868\" duration=\"283000\" />\r\n      <workItem from=\"1687029390175\" duration=\"290000\" />\r\n      <workItem from=\"1687029886387\" duration=\"160000\" />\r\n      <workItem from=\"1687095599276\" duration=\"625000\" />\r\n      <workItem from=\"1687194442232\" duration=\"487000\" />\r\n      <workItem from=\"1687194961875\" duration=\"757000\" />\r\n      <workItem from=\"1687195751432\" duration=\"112000\" />\r\n      <workItem from=\"1687195886963\" duration=\"15000\" />\r\n      <workItem from=\"1687195927013\" duration=\"313000\" />\r\n      <workItem from=\"1687196268221\" duration=\"24000\" />\r\n      <workItem from=\"1687196324751\" duration=\"1326000\" />\r\n      <workItem from=\"1687197694144\" duration=\"378000\" />\r\n      <workItem from=\"1687198098052\" duration=\"50000\" />\r\n      <workItem from=\"1687198299496\" duration=\"803000\" />\r\n      <workItem from=\"1687199131332\" duration=\"287000\" />\r\n      <workItem from=\"1687199441894\" duration=\"1384000\" />\r\n      <workItem from=\"1687202210641\" duration=\"90000\" />\r\n      <workItem from=\"1687202327529\" duration=\"3166000\" />\r\n      <workItem from=\"1687268582540\" duration=\"2842000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"show movie projections for next month - frontend\">\r\n      <created>1687029954589</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687029954589</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"implement simple navbar\">\r\n      <created>1687205186970</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1687205186970</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"show movie projections for next month - frontend\" />\r\n    <MESSAGE value=\"implement simple navbar\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"implement simple navbar\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java</url>\r\n          <line>38</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/.idea/workspace.xml	(date 1687371242845)
+@@ -4,9 +4,20 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment="implement simple navbar">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++    <list default="true" id="f0b252a0-13a6-48aa-994e-69a2b3eddbbd" name="Changes" comment=".">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_20_6_2023_20_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_20_6_2023_20_43__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreening.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/model/MovieScreening.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/repo/MovieScreeningRepository.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/movie-screening/movie-screening.component.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/movie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/movie.service.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/movieScreening.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/movieScreening.service.ts" afterDir="false" />
+     </list>
+     <list id="d12acbd8-9a46-4938-ad02-968b61e9c5a6" name="no commit" comment="no commit" />
+     <option name="SHOW_DIALOG" value="false" />
+@@ -23,6 +34,9 @@
+     <system id="GRADLE">
+       <state>
+         <task path="$PROJECT_DIR$/backend/gradle">
++          <activation />
++        </task>
++        <task path="$PROJECT_DIR$">
+           <activation />
+         </task>
+         <projects_view>
+@@ -60,6 +74,10 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="RequestMappingsPanelOrder0" value="0" />
++    <property name="RequestMappingsPanelOrder1" value="1" />
++    <property name="RequestMappingsPanelWidth0" value="75" />
++    <property name="RequestMappingsPanelWidth1" value="75" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+@@ -82,7 +100,7 @@
+       <recent name="D:\FINKI\Semestar8\NBP\proekt\app\mea_pellicula" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Remote JVM Debug.Local Debug JVM">
++  <component name="RunManager" selected="Spring Boot.BackendApplication">
+     <configuration name="D:/FINKI/Semestar8/NBP/proekt/app/mea_pellicula [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+       <ExternalSystemSettings>
+         <option name="executionName" />
+@@ -186,7 +204,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1687205186970</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary=".">
++      <created>1687370635401</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1687370635401</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -202,23 +227,12 @@
+         </entry>
+       </map>
+     </option>
+-    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="show movie projections for next month - frontend" />
+     <MESSAGE value="implement simple navbar" />
+-    <option name="LAST_COMMIT_MESSAGE" value="implement simple navbar" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/backend/src/main/java/mk/ukim/finki/mea_pellicula/api/MovieController.java</url>
+-          <line>38</line>
+-          <option name="timeStamp" value="1" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
++    <MESSAGE value="." />
++    <option name="LAST_COMMIT_MESSAGE" value="." />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.mea_pellicula;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.jdbc.core.JdbcTemplate;\r\nimport org.springframework.jdbc.datasource.DriverManagerDataSource;\r\n\r\nimport javax.sql.DataSource;\r\n\r\n@SpringBootApplication\r\npublic class BackendApplication {\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSpringApplication.run(BackendApplication.class, args);\r\n\t}\r\n\t@Bean\r\n\tpublic DataSource dataSource() {\r\n\t\tDriverManagerDataSource dataSource = new DriverManagerDataSource();\r\n\t\tdataSource.setDriverClassName(\"org.postgresql.Driver\");\r\n\t\tdataSource.setUrl(\"jdbc:postgresql://localhost:5432/mea_pellicula\");\r\n\t\tdataSource.setUsername(\"postgres\");\r\n\t\tdataSource.setPassword(\"eden2tri4\");\r\n\t\treturn dataSource;\r\n\t}\r\n\t@Bean\r\n\tpublic JdbcTemplate jdbcTemplate(DataSource dataSource) {\r\n\t\treturn new JdbcTemplate(dataSource);\r\n\t}\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java b/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java
+--- a/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/backend/src/main/java/mk/ukim/finki/mea_pellicula/BackendApplication.java	(date 1687371232838)
+@@ -14,18 +14,18 @@
+ 	public static void main(String[] args) {
+ 		SpringApplication.run(BackendApplication.class, args);
+ 	}
+-	@Bean
+-	public DataSource dataSource() {
+-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+-		dataSource.setDriverClassName("org.postgresql.Driver");
+-		dataSource.setUrl("jdbc:postgresql://localhost:5432/mea_pellicula");
+-		dataSource.setUsername("postgres");
+-		dataSource.setPassword("eden2tri4");
+-		return dataSource;
+-	}
+-	@Bean
+-	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+-		return new JdbcTemplate(dataSource);
+-	}
++//	@Bean
++//	public DataSource dataSource() {
++//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
++//		dataSource.setDriverClassName("org.postgresql.Driver");
++//		dataSource.setUrl("jdbc:postgresql://localhost:5432/mea_pellicula");
++//		dataSource.setUsername("postgres");
++//		dataSource.setPassword("vasko");
++//		return dataSource;
++//	}
++//	@Bean
++//	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
++//		return new JdbcTemplate(dataSource);
++//	}
+ 
+ }
+\ No newline at end of file
+Index: backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mk.ukim.finki.mea_pellicula.service;\r\n\r\nimport org.springframework.jdbc.core.JdbcTemplate;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.security.Timestamp;\r\nimport java.time.LocalDateTime;\r\n\r\n@Service\r\npublic class MovieScreeningService {\r\n    private final JdbcTemplate jdbcTemplate;\r\n\r\n    public MovieScreeningService(JdbcTemplate jdbcTemplate) {\r\n        this.jdbcTemplate = jdbcTemplate;\r\n    }\r\n\r\n    public String addMovieScreening(LocalDateTime startDate, double basePrice, Long movieId, Long cinemaRoomId) {\r\n        String procedureCall = \"SELECT create_movie_screening(?, ?, ?, ?)\";\r\n        try {\r\n            jdbcTemplate.update(procedureCall, startDate, basePrice, movieId, cinemaRoomId);\r\n            return \"Adding successfull\";\r\n        }\r\n        catch (Exception e)\r\n        {\r\n            return e.getMessage();\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java b/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java
+--- a/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/backend/src/main/java/mk/ukim/finki/mea_pellicula/service/MovieScreeningService.java	(date 1687370727373)
+@@ -3,7 +3,6 @@
+ import org.springframework.jdbc.core.JdbcTemplate;
+ import org.springframework.stereotype.Service;
+ 
+-import java.security.Timestamp;
+ import java.time.LocalDateTime;
+ 
+ @Service
+@@ -19,9 +18,7 @@
+         try {
+             jdbcTemplate.update(procedureCall, startDate, basePrice, movieId, cinemaRoomId);
+             return "Adding successfull";
+-        }
+-        catch (Exception e)
+-        {
++        } catch (Exception e) {
+             return e.getMessage();
+         }
+     }
+Index: frontend/src/app/movie-screening/movie-screening.component.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.input_field\r\n{\r\n    width: 15%;\r\n    margin-top:2%;\r\n}\r\n.input_field > label\r\n{\r\n    font-weight: bolder;\r\n}\r\n\r\n.cards {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 15px;\r\n  }\r\n  \r\n 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/app/movie-screening/movie-screening.component.css b/frontend/src/app/movie-screening/movie-screening.component.css
+--- a/frontend/src/app/movie-screening/movie-screening.component.css	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/frontend/src/app/movie-screening/movie-screening.component.css	(date 1687370906622)
+@@ -1,17 +1,15 @@
+-.input_field
+-{
+-    width: 15%;
+-    margin-top:2%;
++.input_field {
++  width: 15%;
++  margin-top: 2%;
+ }
+-.input_field > label
+-{
+-    font-weight: bolder;
++
++.input_field > label {
++  font-weight: bolder;
+ }
+ 
+ .cards {
+-    display: flex;
+-    flex-direction: column;
+-    gap: 15px;
+-  }
+-  
+- 
+\ No newline at end of file
++  display: flex;
++  flex-direction: column;
++  gap: 15px;
++}
++
+Index: frontend/src/app/services/movieScreening.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {HttpClient} from '@angular/common/http';\r\nimport {Injectable} from '@angular/core';\r\nimport {Observable} from 'rxjs';\r\nimport { MovieScreening } from '../models/movie-screening.model';\r\n@Injectable({\r\n    providedIn: 'root'\r\n  })\r\n  export class MovieScreeningService {\r\n    path = 'api/movies';\r\n    constructor(private http: HttpClient) {\r\n    }\r\n    createMovieScreening(movieScreening: MovieScreening)//:Observable<any>\r\n    {\r\n        console.log(\"called\");\r\n        const formData: FormData = new FormData();\r\n        formData.append('startDate',movieScreening.startDate.toString());\r\n        formData.append(\"basePrice\",movieScreening.basePrice.toString());\r\n        formData.append(\"movieId\", movieScreening.movieId.toString());\r\n        console.log(movieScreening.movieId.toString());\r\n        formData.append(\"cinemaRoomId\", movieScreening.cinemaRoomId.toString());\r\n        return this.http.post<any>(`${this.path}/add-movie-screening`,formData);\r\n    }\r\n  }\r\n  
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/app/services/movieScreening.service.ts b/frontend/src/app/services/movieScreening.service.ts
+--- a/frontend/src/app/services/movieScreening.service.ts	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/frontend/src/app/services/movieScreening.service.ts	(date 1687371015012)
+@@ -1,24 +1,27 @@
+-import {HttpClient} from '@angular/common/http';
+-import {Injectable} from '@angular/core';
+-import {Observable} from 'rxjs';
+-import { MovieScreening } from '../models/movie-screening.model';
+-@Injectable({
+-    providedIn: 'root'
+-  })
+-  export class MovieScreeningService {
+-    path = 'api/movies';
+-    constructor(private http: HttpClient) {
+-    }
+-    createMovieScreening(movieScreening: MovieScreening)//:Observable<any>
+-    {
+-        console.log("called");
+-        const formData: FormData = new FormData();
+-        formData.append('startDate',movieScreening.startDate.toString());
+-        formData.append("basePrice",movieScreening.basePrice.toString());
+-        formData.append("movieId", movieScreening.movieId.toString());
+-        console.log(movieScreening.movieId.toString());
+-        formData.append("cinemaRoomId", movieScreening.cinemaRoomId.toString());
+-        return this.http.post<any>(`${this.path}/add-movie-screening`,formData);
+-    }
+-  }
+-  
+\ No newline at end of file
++// import {HttpClient} from '@angular/common/http';
++// import {Injectable} from '@angular/core';
++// import {Observable} from 'rxjs';
++// import {MovieScreening} from '../models/movie-screening.model';
++//
++// @Injectable({
++//   providedIn: 'root'
++// })
++// export class MovieScreeningService {
++//   path = 'api/movies';
++//
++//   constructor(private http: HttpClient) {
++//   }
++//
++//   createMovieScreening(movieScreening: MovieScreening)//:Observable<any>
++//   {
++//     console.log("called");
++//     const formData: FormData = new FormData();
++//     formData.append('startDate', movieScreening.startDate.toString());
++//     formData.append("basePrice", movieScreening.basePrice.toString());
++//     formData.append("movieId", movieScreening.movieId.toString());
++//     console.log(movieScreening.movieId.toString());
++//     formData.append("cinemaRoomId", movieScreening.cinemaRoomId.toString());
++//     return this.http.post<any>(`${this.path}/add-movie-screening`, formData);
++//   }
++// }
++//
+Index: frontend/src/app/app-routing.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {NgModule} from '@angular/core';\r\nimport {RouterModule, Routes} from '@angular/router';\r\nimport {ListNextMonthProjectionsComponent} from \"./list-next-month-projections/list-next-month-projections.component\";\r\nimport {UpcomingProjectionsInfoComponent} from \"./upcoming-projections-info/upcoming-projections-info.component\";\r\nimport {AddNewMovieComponent} from \"./add-new-movie/add-new-movie.component\"\r\nimport { MovieScreeningComponent } from './movie-screening/movie-screening.component';\r\n\r\nconst routes: Routes = [\r\n  {path: 'movies/next-month-projections', component: ListNextMonthProjectionsComponent},\r\n  {path: 'movies/add-new-movie', component: AddNewMovieComponent},\r\n  {path: 'movies/upcoming-projections-info/:movieId', component: UpcomingProjectionsInfoComponent},\r\n  {path: 'movies/add-movie-screening', component: MovieScreeningComponent},\r\n  {path: '', redirectTo: 'movies/next-month-projections', pathMatch: 'full'}\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/app/app-routing.module.ts b/frontend/src/app/app-routing.module.ts
+--- a/frontend/src/app/app-routing.module.ts	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/frontend/src/app/app-routing.module.ts	(date 1687370906617)
+@@ -3,7 +3,7 @@
+ import {ListNextMonthProjectionsComponent} from "./list-next-month-projections/list-next-month-projections.component";
+ import {UpcomingProjectionsInfoComponent} from "./upcoming-projections-info/upcoming-projections-info.component";
+ import {AddNewMovieComponent} from "./add-new-movie/add-new-movie.component"
+-import { MovieScreeningComponent } from './movie-screening/movie-screening.component';
++import {MovieScreeningComponent} from './movie-screening/movie-screening.component';
+ 
+ const routes: Routes = [
+   {path: 'movies/next-month-projections', component: ListNextMonthProjectionsComponent},
+Index: frontend/src/app/movie-screening/movie-screening.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { Component } from '@angular/core';\r\nimport { MovieScreeningService } from '../services/movieScreening.service';\r\nimport { MovieScreening } from '../models/movie-screening.model';\r\nimport { FormBuilder, FormControl, FormGroup } from '@angular/forms';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-movie-service',\r\n  templateUrl: './movie-screening.component.html',\r\n  styleUrls: ['./movie-screening.component.css']\r\n})\r\nexport class MovieScreeningComponent  {\r\n  form: FormGroup;\r\n  constructor(private movieScreeningService: MovieScreeningService, private router: Router, fb: FormBuilder) {\r\n    this.form = fb.group({\r\n      startDate: new FormControl(),\r\n      basePrice: new FormControl(),\r\n      movieId: new FormControl(),\r\n      cinemaRoomId: new FormControl()\r\n    });\r\n  }\r\n  onSubmit() {\r\n    console.log(this.form.getRawValue());\r\n   this.movieScreeningService.createMovieScreening(this.form.getRawValue()).subscribe({\r\n      next: () => {\r\n        this.router.navigate(['movies/next-month-projections']);\r\n      },\r\n      error: (err) => {\r\n        console.error(err);\r\n      }\r\n    });\r\n  }\r\n  cancel() {\r\n    this.router.navigate(['movies/next-month-projections']);\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/app/movie-screening/movie-screening.component.ts b/frontend/src/app/movie-screening/movie-screening.component.ts
+--- a/frontend/src/app/movie-screening/movie-screening.component.ts	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/frontend/src/app/movie-screening/movie-screening.component.ts	(date 1687371015000)
+@@ -1,17 +1,17 @@
+-import { Component } from '@angular/core';
+-import { MovieScreeningService } from '../services/movieScreening.service';
+-import { MovieScreening } from '../models/movie-screening.model';
+-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+-import { Router } from '@angular/router';
++import {Component} from '@angular/core';
++import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
++import {Router} from '@angular/router';
++import {MovieService} from "../services/movie.service";
+ 
+ @Component({
+-  selector: 'app-movie-service',
++  selector: 'movie-service',
+   templateUrl: './movie-screening.component.html',
+   styleUrls: ['./movie-screening.component.css']
+ })
+-export class MovieScreeningComponent  {
++export class MovieScreeningComponent {
+   form: FormGroup;
+-  constructor(private movieScreeningService: MovieScreeningService, private router: Router, fb: FormBuilder) {
++
++  constructor(private movieService: MovieService, private router: Router, fb: FormBuilder) {
+     this.form = fb.group({
+       startDate: new FormControl(),
+       basePrice: new FormControl(),
+@@ -19,17 +19,18 @@
+       cinemaRoomId: new FormControl()
+     });
+   }
++
+   onSubmit() {
+-    console.log(this.form.getRawValue());
+-   this.movieScreeningService.createMovieScreening(this.form.getRawValue()).subscribe({
++    this.movieService.createMovieScreening(this.form.getRawValue()).subscribe({
+       next: () => {
+         this.router.navigate(['movies/next-month-projections']);
+       },
+       error: (err) => {
+-        console.error(err);
++        console.error(err.message);
+       }
+     });
+   }
++
+   cancel() {
+     this.router.navigate(['movies/next-month-projections']);
+   }
+Index: frontend/src/app/movie-screening/movie-screening.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><div class=\"container\">\r\n   <form (ngSubmit)=\"onSubmit()\" [formGroup]=\"form\" ngNativeValidate>\r\n      <div class=\"input_field\">\r\n        <label for=\"startDate\" class=\"form-label\">Start date</label>\r\n        <input type=\"datetime-local\" id=\"startDate\" name=\"startDate\" class=\"form-control\" formControlName=\"startDate\" required>\r\n      </div>\r\n      <div class=\"input_field\">\r\n        <label for=\"basePrice\" class=\"form-label\">Base price</label>\r\n        <input type=\"number\" name=\"basePrice\" class=\"form-control\" formControlName=\"basePrice\">\r\n      </div>\r\n      <div class=\"input_field\">\r\n        <label for=\"movieId\" class=\"form-label\">Movie Number</label>\r\n        <input type=\"number\" class=\"form-control\" id=\"movieId\" name=\"movieId\" formControlName=\"movieId\" required>\r\n      </div>\r\n      <div class=\"input_field\">\r\n        <label for=\"cinemaRoomId\" class=\"form-label\">Cinema Room Number</label>\r\n        <input type=\"number\" min=\"1\" class=\"form-control\" id=\"cinemaRoomId\" name=\"cinemaRoomId\" formControlName=\"cinemaRoomId\" required>\r\n      </div>\r\n      <div class=\"input_field\">\r\n        <button type=\"submit\" class=\"btn btn-info me-3\">Save</button>\r\n       <button type=\"button\" class=\"btn btn-secondary\" (click)=\"cancel()\">Cancel</button>\r\n      </div>\r\n  </form>\r\n  </div>\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/app/movie-screening/movie-screening.component.html b/frontend/src/app/movie-screening/movie-screening.component.html
+--- a/frontend/src/app/movie-screening/movie-screening.component.html	(revision 8f6c13e808dfce12ca63e892520e3641b61de05d)
++++ b/frontend/src/app/movie-screening/movie-screening.component.html	(date 1687370906608)
+@@ -1,25 +1,27 @@
+ <div class="container">
+-   <form (ngSubmit)="onSubmit()" [formGroup]="form" ngNativeValidate>
+-      <div class="input_field">
+-        <label for="startDate" class="form-label">Start date</label>
+-        <input type="datetime-local" id="startDate" name="startDate" class="form-control" formControlName="startDate" required>
+-      </div>
+-      <div class="input_field">
+-        <label for="basePrice" class="form-label">Base price</label>
+-        <input type="number" name="basePrice" class="form-control" formControlName="basePrice">
+-      </div>
+-      <div class="input_field">
+-        <label for="movieId" class="form-label">Movie Number</label>
+-        <input type="number" class="form-control" id="movieId" name="movieId" formControlName="movieId" required>
+-      </div>
+-      <div class="input_field">
+-        <label for="cinemaRoomId" class="form-label">Cinema Room Number</label>
+-        <input type="number" min="1" class="form-control" id="cinemaRoomId" name="cinemaRoomId" formControlName="cinemaRoomId" required>
+-      </div>
+-      <div class="input_field">
+-        <button type="submit" class="btn btn-info me-3">Save</button>
+-       <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+-      </div>
++  <form (ngSubmit)="onSubmit()" [formGroup]="form" ngNativeValidate>
++    <div class="input_field">
++      <label for="startDate" class="form-label">Start date</label>
++      <input type="datetime-local" id="startDate" name="startDate" class="form-control" formControlName="startDate"
++             required>
++    </div>
++    <div class="input_field">
++      <label for="basePrice" class="form-label">Base price</label>
++      <input type="number" name="basePrice" id="basePrice" class="form-control" formControlName="basePrice">
++    </div>
++    <div class="input_field">
++      <label for="movieId" class="form-label">Movie Number</label>
++      <input type="number" class="form-control" id="movieId" name="movieId" formControlName="movieId" required>
++    </div>
++    <div class="input_field">
++      <label for="cinemaRoomId" class="form-label">Cinema Room Number</label>
++      <input type="number" min="1" class="form-control" id="cinemaRoomId" name="cinemaRoomId"
++             formControlName="cinemaRoomId" required>
++    </div>
++    <div class="input_field">
++      <button type="submit" class="btn btn-info me-3">Save</button>
++      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
++    </div>
+   </form>
+-  </div>
++</div>
+ 
