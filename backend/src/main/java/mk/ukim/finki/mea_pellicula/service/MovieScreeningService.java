@@ -19,7 +19,7 @@ public class MovieScreeningService {
             jdbcTemplate.update(procedureCall, startDate, basePrice, movieId, cinemaRoomId);
             return "Success";
         } catch (Exception e) {
-            return "Movie screening can not be added succesffuly";
+            return e.getMessage().substring(e.getMessage().indexOf("ERROR:"), e.getMessage().indexOf("Where: PL/pgSQL"));
         }
     }
 }

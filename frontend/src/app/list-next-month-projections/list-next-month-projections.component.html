@@ -1,5 +1,10 @@
 <div class="container">
   <div class="row">
+    <mat-spinner
+      class="spinner"
+      *ngIf="loader$ | async"
+    >
+    </mat-spinner>
     <div class="col-6 mt-2" *ngFor="let movieProjection of movieProjections">
       <movie-card (selectedMovie$)="showUpcomingProjectionForSelectedMovie($event)"
                   (selectedMovieAddScreening$)="createAScreening($event)"

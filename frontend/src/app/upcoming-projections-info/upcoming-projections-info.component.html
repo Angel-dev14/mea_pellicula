@@ -1,4 +1,9 @@
 <div class="container">
+  <mat-spinner
+    class="spinner"
+    *ngIf="loader$ | async"
+  >
+  </mat-spinner>
   <div class="row">
     <div class="average_rating">The average rating for this movie is {{averageRating?.averageRating}}
       from {{averageRating?.numberOfRatings}} ratings.
