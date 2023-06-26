@@ -4,7 +4,8 @@
 }
 
 form {
-  align-self: center;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .input_field > label {

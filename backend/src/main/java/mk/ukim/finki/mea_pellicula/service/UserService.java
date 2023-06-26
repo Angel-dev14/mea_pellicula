@@ -25,7 +25,7 @@ public class UserService {
             jdbcTemplate.update(procedureCall, firstName, lastName, age, gender, email, password);
             return "Success";
         } catch (Exception e) {
-            return e.getMessage();
+            return e.getMessage().substring(e.getMessage().indexOf("ERROR:"), e.getMessage().indexOf("Where: PL/pgSQL"));
         }
     }
 }

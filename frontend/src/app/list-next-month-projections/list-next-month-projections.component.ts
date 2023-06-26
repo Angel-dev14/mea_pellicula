@@ -4,6 +4,7 @@ import {MovieService} from "../services/movie.service";
 import {Router} from "@angular/router";
 import {User} from "../models/user.model";
 import {AuthService} from "../services/auth.service";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'list-next-month-projections',
@@ -15,6 +16,7 @@ export class ListNextMonthProjectionsComponent implements OnInit {
   showAddMovieScreening: boolean | undefined;
   user: User | undefined;
   movieProjections: MovieProjection[] = [];
+  loader$ = new BehaviorSubject<boolean>(true);
 
   constructor(private movieService: MovieService, private router: Router, private authService: AuthService) {
     this.authService.userEmitter.subscribe(user => {
@@ -31,9 +33,11 @@ export class ListNextMonthProjectionsComponent implements OnInit {
     this.movieService.getMovieProjectionsForNextMonth().subscribe({
       next: (movies) => {
         this.movieProjections = movies;
+        this.loader$.next(false);
       },
       error: (err) => {
         console.error(err.error.message);
+        this.loader$.next(false);
       }
     });
   }

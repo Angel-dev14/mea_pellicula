@@ -36,7 +36,7 @@ export class MovieScreeningComponent implements OnInit {
   onSubmit() {
     this.movieService.createMovieScreening(this.form.getRawValue(), this.movieId).subscribe({
       next: (data) => {
-        if (data.message === 'Success' || data.message === 'PreparedStatementCallback; SQL [SELECT create_movie_screening(?, ?, ?, ?)]; A result was returned when none was expected.') {
+        if (data.message === 'Success') {
           this.router.navigate(['movies/next-month-projections']);
         } else {
           this.setErrorMessage(true, data.message);
@@ -53,7 +53,6 @@ export class MovieScreeningComponent implements OnInit {
   }
 
   setErrorMessage(bool: boolean, message: string) {
-    console.log("called", bool, " message: ", message)
     this.showErrorMessage = bool;
     this.errorMessage = message;
   }

@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {filter, map, mergeMap, Subject, takeUntil} from "rxjs";
+import {BehaviorSubject, filter, map, mergeMap, Subject, takeUntil} from "rxjs";
 import {MovieService} from "../services/movie.service";
 import {UpcomingMovieProjection} from '../models/upcoming-movie-projection.model';
 import {AverageRating} from '../models/average-rating.model';
@@ -12,6 +12,7 @@ import {AverageRating} from '../models/average-rating.model';
 })
 export class UpcomingProjectionsInfoComponent implements OnInit, OnDestroy {
   onDestroy$ = new Subject<void>();
+  loader$ = new BehaviorSubject<boolean>(true);
 
   upcomingMovieProjections: UpcomingMovieProjection[] = [];
   averageRating: AverageRating | undefined;
@@ -28,8 +29,10 @@ export class UpcomingProjectionsInfoComponent implements OnInit, OnDestroy {
     ).subscribe({
       next: (upcomingProjections) => {
         this.upcomingMovieProjections = upcomingProjections;
+        this.loader$.next(false);
       },
       error: (err) => {
+        this.loader$.next(false);
         console.error(err.error.message);
       }
     });

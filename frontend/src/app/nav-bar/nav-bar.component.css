@@ -2,6 +2,7 @@
   font-size: 20px;
   margin-bottom: 10px;
   height: 70px;
+  width: 100%;
 }
 
 .Btn {
@@ -48,7 +49,7 @@
 }
 
 .Btn:hover {
-  width: 125px;
+  width: 160px;
   border-radius: 40px;
   transition-duration: .3s;
 }
@@ -64,6 +65,7 @@
   width: 70%;
   transition-duration: .3s;
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 .Btn:active {
@@ -84,6 +86,7 @@ button {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
+  
 }
 
 button:focus,
@@ -110,3 +113,4 @@ button:after {
   transition-duration: 400ms;
   transition-property: width, left;
 }
+

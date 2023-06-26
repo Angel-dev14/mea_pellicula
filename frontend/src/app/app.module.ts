@@ -26,6 +26,7 @@ import {MovieScreeningComponent} from './movie-screening/movie-screening.compone
 import {RegisterComponent} from './register/register.component';
 import {AddNewMovieComponent} from './add-new-movie/add-new-movie.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,7 @@ import {AddNewMovieComponent} from './add-new-movie/add-new-movie.component';
     RegisterComponent,
     NavBarComponent,
     AddNewMovieComponent,
-    MovieScreeningComponent
+    MovieScreeningComponent,
   ],
   imports: [
     BrowserModule,
